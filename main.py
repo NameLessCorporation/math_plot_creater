@@ -12,6 +12,8 @@ from functions.square import *
 from functions.quadratic import *
 from functions.hyperbola import *
 
+root = None
+root1 = None
 v = None
 
 k = None
@@ -19,36 +21,45 @@ a = None
 b = None
 
 
-def input_draw():
-	p(k.get())
-	p(a.get())
-	p(b.get())
+def draw():
+	global k
+	global a
+	global b
 
+	if v.get() == 1:
+		creat_linear(int(k), int(a), int(b))
+	elif v.get() == 2:
+		creat_quadratic(int(k), int(a), int(b))
+	elif v.get() == 3:
+		creat_cubic(int(k), int(a), int(b))
+	elif v.get() == 4:
+		creat_hyperbola(int(k), int(a), int(b))
+	elif v.get() == 5:
+		creat_square(int(k), int(a), int(b))
 
 def creat_plot():
+	global root1
 	global v
-	if v.get() == 1:
-		input_arg()
-		creat_linear(k.get(), a.get(), b.get())
-	elif  v.get() == 2:
-		input_arg()
-		creat_quadratic(k.get(), a.get(), b.get())
-	elif v.get() == 3:
-		input_arg()
-		creat_cubic(k.get(), a.get(), b.get())
-	elif v.get() == 4:
-		input_arg()
-		creat_hyperbola(k.get(), a.get(), b.get())
-	elif v.get() == 5:
-		input_arg()
-		creat_square(k.get(), a.get(), b.get())
+	global k
+	global a
+	global b
+
+	k = k.get()
+	a = a.get()
+	b = b.get()
+	root1.destroy()
+	draw()
+	
 
 
 def input_arg():
+	global root
+	global root1
 	global k
 	global a
 	global b
 	#<--Settings for root
+	root.destroy()
 	root1 = Tk()
 
 	root1.title('PLOT_CREATER')
@@ -71,7 +82,7 @@ def input_arg():
 
 	b = Entry(root1, width = 20)
 
-	button = Button(root1, text = 'Watch weather', command = input_draw)
+	button = Button(root1, text = 'Watch weather', command = creat_plot)
 
 	#<--Configs
 	label1.config(font = ('Arial', 15, 'bold'))
@@ -108,6 +119,7 @@ def input_arg():
 
 
 def main():
+	global root
 	global v
 	#<--Settings for root
 	root = Tk()
@@ -129,7 +141,7 @@ def main():
 	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
 	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
 
-	button = Button(root, text = 'CREAT PLOT', command = creat_plot)
+	button = Button(root, text = 'CREAT PLOT', command = input_arg)
 	#<--Configs
 	label.config(font = ('Arial', 15, 'bold'))
 

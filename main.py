@@ -84,6 +84,15 @@ def input_arg():
 
 	button = Button(root1, text = 'Watch weather', command = creat_plot)
 
+	k.delete(0, END)
+	k.insert(0, '1')
+
+	a.delete(0, END)
+	a.insert(0, '0')
+
+	b.delete(0, END)
+	b.insert(0, '0')
+
 	#<--Configs
 	label1.config(font = ('Arial', 15, 'bold'))
 
@@ -150,6 +159,8 @@ def main():
 	radio3.config(bg = '#1FA7E1')
 	radio4.config(bg = '#1FA7E1')
 	radio5.config(bg = '#1FA7E1')
+
+	radio1.select()
 
 	button.config(font = ('Arial', 15, 'bold'))
 	#<--Grids

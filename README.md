@@ -1,4 +1,4 @@
-# MATH. PLOT LIB.
+# MATH. PLOT CREATER
 
 ## Description:
 

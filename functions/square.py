@@ -6,10 +6,9 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_linear():
-	p('1')
+def creat_square():
+	p('5')
 
 
 if __name__ == '__main__':
-	creat_linear()
-	
+	creat_square()

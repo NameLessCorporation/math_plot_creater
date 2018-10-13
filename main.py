@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 #<--Import functions wish file-->
 from functions.cubic import *
 from functions.linear import *
+from functions.square import *
 from functions.quadratic import *
+from functions.hyperbola import *
 
 v = None
 
@@ -20,7 +22,10 @@ def creat_plot():
 		creat_quadratic()
 	elif v.get() == 3:
 		creat_cubic()
-
+	elif v.get() == 4:
+		creat_hyperbola()
+	elif v.get() == 5:
+		creat_square()
 
 def main():
 	global v
@@ -41,6 +46,8 @@ def main():
 	radio1 = Radiobutton(root, text="Linear function", variable=v, value=1)
 	radio2 = Radiobutton(root, text="Quadratic function", variable=v, value=2)
 	radio3 = Radiobutton(root, text="Cubic function", variable=v, value=3)
+	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
+	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
 
 	button = Button(root, text = 'CREAT PLOT', command = creat_plot)
 	#<--Configs
@@ -49,6 +56,8 @@ def main():
 	radio1.config(bg = '#1FA7E1')
 	radio2.config(bg = '#1FA7E1')
 	radio3.config(bg = '#1FA7E1')
+	radio4.config(bg = '#1FA7E1')
+	radio5.config(bg = '#1FA7E1')
 
 	button.config(font = ('Arial', 15, 'bold'))
 	#<--Grids
@@ -57,6 +66,8 @@ def main():
 	radio1.grid(column = 0, row = 1)
 	radio2.grid(column = 0, row = 2)
 	radio3.grid(column = 0, row = 3)
+	radio4.grid(column = 0, row = 4)
+	radio5.grid(column = 0, row = 5)
 
 	button.grid(column = 0, columnspan = 2)
 	#<--Start

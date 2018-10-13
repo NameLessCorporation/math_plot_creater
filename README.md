@@ -8,6 +8,6 @@
 
 ## Screenshots:
 
-## PROGRAMMERS:
-** >>midaef.ru ** 
-** >>stdian.ru ** 
+## Programmers:
+**midaef.ru** 
+**stdian.ru** 

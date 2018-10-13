@@ -1,9 +1,10 @@
 
 #<--Import lib
-import sys
+import matplotlib.pyplot as plt
 from ezprint import *
 from tkinter import *
-import matplotlib.pyplot as plt
+import numpy as np
+import decimal
 #<--Import functions wish file-->
 from functions.cubic import *
 from functions.linear import *

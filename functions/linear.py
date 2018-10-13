@@ -7,9 +7,15 @@ import matplotlib.pyplot as plt
 
 
 def creat_linear(k, a, b):
-	p('1')
+	x_points = []
+	y_points = []
 
+	for x in range(-10, 11):
+		x_points.append(x - a)
+		y = k * x + b
+		y_points.append(y)
 
-if __name__ == '__main__':
-	creat_linear()
-	
+	plt.plot(x_points, y_points)
+	plt.axis('equal')
+	plt.show()
+

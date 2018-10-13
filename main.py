@@ -13,19 +13,23 @@ from functions.hyperbola import *
 
 v = None
 
+k = -1
+a = 4
+b = 4
+
 
 def creat_plot():
 	global v
 	if v.get() == 1:
-		creat_linear()
+		creat_linear(k, a, b)
 	elif  v.get() == 2:
-		creat_quadratic()
+		creat_quadratic(k, a, b)
 	elif v.get() == 3:
-		creat_cubic()
+		creat_cubic(k, a, b)
 	elif v.get() == 4:
-		creat_hyperbola()
+		creat_hyperbola(k, a, b)
 	elif v.get() == 5:
-		creat_square()
+		creat_square(k, a, b)
 
 def main():
 	global v

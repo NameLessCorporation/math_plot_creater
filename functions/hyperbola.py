@@ -6,7 +6,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_hyperbola():
+def creat_hyperbola(k, a, b):
 	p('4')
 
 

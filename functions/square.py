@@ -6,7 +6,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_square():
+def creat_square(k, a, b):
 	p('5')
 
 

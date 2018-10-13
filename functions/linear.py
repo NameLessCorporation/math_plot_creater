@@ -6,7 +6,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_linear():
+def creat_linear(k, a, b):
 	p('1')
 
 

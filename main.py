@@ -82,7 +82,7 @@ def input_arg():
 
 	b = Entry(root1, width = 20)
 
-	button = Button(root1, text = 'Watch weather', command = creat_plot)
+	button = Button(root1, text = 'Draw', command = creat_plot)
 
 	k.delete(0, END)
 	k.insert(0, '1')

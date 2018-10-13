@@ -11,7 +11,7 @@ def creat_cubic(k, a, b):
 	x_points = []
 	y_points = []
 
-	x_points = np.arange(-3, 3, 0.1)
+	x_points = np.arange(-1.5, 1.5, 0.1)
 	new_x  = []
 	for i in range(len(x_points)):
 		new_x.append(x_points[i])

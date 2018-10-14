@@ -27,15 +27,15 @@ def draw():
 	global b
 
 	if v.get() == 1:
-		creat_linear(int(k), int(a), int(b))
+		creat_linear(float(k), float(a), float(b))
 	elif v.get() == 2:
-		creat_quadratic(int(k), int(a), int(b))
+		creat_quadratic(float(k), float(a), float(b))
 	elif v.get() == 3:
-		creat_cubic(int(k), int(a), int(b))
+		creat_cubic(float(k), float(a), float(b))
 	elif v.get() == 4:
-		creat_hyperbola(int(k), int(a), int(b))
+		creat_hyperbola(float(k), float(a), float(b))
 	elif v.get() == 5:
-		creat_square(int(k), int(a), int(b))
+		creat_square(float(k), float(a), float(b))
 
 def creat_plot():
 	global root1

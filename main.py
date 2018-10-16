@@ -11,6 +11,7 @@ from functions.linear import *
 from functions.square import *
 from functions.quadratic import *
 from functions.hyperbola import *
+from functions.sin import *
 
 root = None
 root1 = None
@@ -36,6 +37,8 @@ def draw():
 		creat_hyperbola(float(k), float(a), float(b))
 	elif v.get() == 5:
 		creat_square(float(k), float(a), float(b))
+	elif v.get() == 6:
+		creat_sin(float(k), float(a), float(b))
 
 def creat_plot():
 	global root1
@@ -149,6 +152,7 @@ def main():
 	radio3 = Radiobutton(root, text="Cubic function", variable=v, value=3)
 	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
 	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
+	radio6 = Radiobutton(root, text="Sin function", variable=v, value=6)
 
 	button = Button(root, text = 'CREAT PLOT', command = input_arg)
 	#<--Configs
@@ -159,6 +163,7 @@ def main():
 	radio3.config(bg = '#1FA7E1')
 	radio4.config(bg = '#1FA7E1')
 	radio5.config(bg = '#1FA7E1')
+	radio6.config(bg = '#1FA7E1')
 
 	radio1.select()
 
@@ -171,6 +176,7 @@ def main():
 	radio3.grid(column = 0, row = 3)
 	radio4.grid(column = 0, row = 4)
 	radio5.grid(column = 0, row = 5)
+	radio6.grid(column = 0, row = 6)
 
 	button.grid(column = 0, columnspan = 2)
 	#<--Start

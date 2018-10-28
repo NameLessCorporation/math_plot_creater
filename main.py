@@ -1,11 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-#<--Import lib
+# <--Import lib
+
 import matplotlib.pyplot as plt
 from ezprint import *
 from tkinter import *
 import numpy as np
 import decimal
-#<--Import functions wish file-->
+
+# <--Import functions wish file-->
+
 from functions.cubic import *
 from functions.linear import *
 from functions.square import *
@@ -13,9 +18,9 @@ from functions.quadratic import *
 from functions.hyperbola import *
 from functions.sin import *
 
-root = None
-root1 = None
-v = None
+mainFrame = None
+secondFrame = None
+plot = None
 
 k = None
 a = None
@@ -23,165 +28,193 @@ b = None
 
 
 def draw():
-	global k
-	global a
-	global b
+    global k
+    global a
+    global b
 
-	if v.get() == 1:
-		creat_linear(float(k), float(a), float(b))
-	elif v.get() == 2:
-		creat_quadratic(float(k), float(a), float(b))
-	elif v.get() == 3:
-		creat_cubic(float(k), float(a), float(b))
-	elif v.get() == 4:
-		creat_hyperbola(float(k), float(a), float(b))
-	elif v.get() == 5:
-		creat_square(float(k), float(a), float(b))
-	elif v.get() == 6:
-		creat_sin(float(k), float(a), float(b))
+    if plot.get() == 1:
+        creat_linear(float(k), float(a), float(b))
+    elif plot.get() == 2:
+        creat_quadratic(float(k), float(a), float(b))
+    elif plot.get() == 3:
+        creat_cubic(float(k), float(a), float(b))
+    elif plot.get() == 4:
+        creat_hyperbola(float(k), float(a), float(b))
+    elif plot.get() == 5:
+        creat_square(float(k), float(a), float(b))
+    elif plot.get() == 6:
+        creat_sin(float(k), float(a), float(b))
+
 
 def creat_plot():
-	global root1
-	global v
-	global k
-	global a
-	global b
+    global secondFrame
+    global plot
+    global k
+    global a
+    global b
 
-	k = k.get()
-	a = a.get()
-	b = b.get()
-	root1.destroy()
-	draw()
-	
+    k = k.get()
+    a = a.get()
+    b = b.get()
+    secondFrame.destroy()
+    draw()
 
 
 def input_arg():
-	global root
-	global root1
-	global k
-	global a
-	global b
-	#<--Settings for root
-	root.destroy()
-	root1 = Tk()
+    global mainFrame
+    global secondFrame
+    global k
+    global a
+    global b
 
-	root1.title('PLOT_CREATER')
+    # <--Settings for root
 
-	root1.resizable(0, 0)
+    mainFrame.destroy()
+    secondFrame = Tk()
 
-	root1.config(bg = '#1FA7E1')
-	root1.config()
+    secondFrame.title('PLOT_CREATER')
 
-	#<--Elements
-	label1 = Label(root1, text = 'Input k:', bg='#1FA7E1', fg='white')
+    secondFrame.resizable(0, 0)
 
-	k = Entry(root1, width = 20)
+    secondFrame.config(bg='#1FA7E1')
+    secondFrame.config()
 
-	label2 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
+    # <--Elements
 
-	a = Entry(root1, width = 20)
+    label1 = Label(secondFrame, text='Input k:', bg='#1FA7E1',
+                   fg='white')
 
-	label3 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
+    k = Entry(secondFrame, width=20)
 
-	b = Entry(root1, width = 20)
+    label2 = Label(secondFrame, text='Input a:', bg='#1FA7E1',
+                   fg='white')
 
-	button = Button(root1, text = 'Draw', command = creat_plot)
+    a = Entry(secondFrame, width=20)
 
-	k.delete(0, END)
-	k.insert(0, '1')
+    label3 = Label(secondFrame, text='Input b:', bg='#1FA7E1',
+                   fg='white')
 
-	a.delete(0, END)
-	a.insert(0, '0')
+    b = Entry(secondFrame, width=20)
 
-	b.delete(0, END)
-	b.insert(0, '0')
+    button = Button(secondFrame, text='Draw', command=creat_plot)
 
-	#<--Configs
-	label1.config(font = ('Arial', 15, 'bold'))
+    k.delete(0, END)
+    k.insert(0, '1')
 
-	k.config(font = ('Arial', 15, 'bold'))
+    a.delete(0, END)
+    a.insert(0, '0')
 
-	label2.config(font = ('Arial', 15, 'bold'))
+    b.delete(0, END)
+    b.insert(0, '0')
 
-	a.config(font = ('Arial', 15, 'bold'))
+    # <--Configs
 
-	label3.config(font = ('Arial', 15, 'bold'))
+    label1.config(font=('Arial', 15, 'bold'))
 
-	b.config(font = ('Arial', 15, 'bold'))
+    k.config(font=('Arial', 15, 'bold'))
 
-	button.config(font = ('Arial', 15, 'bold'))
+    label2.config(font=('Arial', 15, 'bold'))
 
-	#<--Grids
-	label1.grid(column = 0, row = 1)
+    a.config(font=('Arial', 15, 'bold'))
 
-	k.grid(column = 0, row = 2)
+    label3.config(font=('Arial', 15, 'bold'))
 
-	label2.grid(column = 0, row = 3)
+    b.config(font=('Arial', 15, 'bold'))
 
-	a.grid(column = 0, row = 4)
+    button.config(font=('Arial', 15, 'bold'))
 
-	label3.grid(column = 0, row = 5)
+    # <--Grids
 
-	b.grid(column = 0, row = 6)
+    label1.grid(column=0, row=1)
 
-	button.grid(column = 0, columnspan = 7)
+    k.grid(column=0, row=2)
 
-	#<--Start
-	root1.mainloop()
+    label2.grid(column=0, row=3)
+
+    a.grid(column=0, row=4)
+
+    label3.grid(column=0, row=5)
+
+    b.grid(column=0, row=6)
+
+    button.grid(column=0, columnspan=7)
+
+    # <--Start
+
+    secondFrame.mainloop()
 
 
 def main():
-	global root
-	global v
-	#<--Settings for root
-	root = Tk()
+    global mainFrame
+    global plot
 
-	root.title('PLOT_CREATER')
+    # <--Settings for root
 
-	root.resizable(0, 0)
+    mainFrame = Tk()
 
-	root.config(bg = '#1FA7E1')
-	root.config()
+    mainFrame.title('PLOT_CREATER')
 
-	v = IntVar()
-	#<--Elements
-	label = Label(root, text = 'CHOOSE PLOT:', bg='#1FA7E1', fg='white')
+    mainFrame.resizable(0, 0)
 
-	radio1 = Radiobutton(root, text="Linear function", variable=v, value=1)
-	radio2 = Radiobutton(root, text="Quadratic function", variable=v, value=2)
-	radio3 = Radiobutton(root, text="Cubic function", variable=v, value=3)
-	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
-	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
-	radio6 = Radiobutton(root, text="Sin function", variable=v, value=6)
+    mainFrame.config(bg='#1FA7E1')
+    mainFrame.config()
 
-	button = Button(root, text = 'CREAT PLOT', command = input_arg)
-	#<--Configs
-	label.config(font = ('Arial', 15, 'bold'))
+    plot = IntVar()
 
-	radio1.config(bg = '#1FA7E1')
-	radio2.config(bg = '#1FA7E1')
-	radio3.config(bg = '#1FA7E1')
-	radio4.config(bg = '#1FA7E1')
-	radio5.config(bg = '#1FA7E1')
-	radio6.config(bg = '#1FA7E1')
+    # <--Elements
 
-	radio1.select()
+    label = Label(mainFrame, text='CHOOSE PLOT:', bg='#1FA7E1',
+                  fg='white')
 
-	button.config(font = ('Arial', 15, 'bold'))
-	#<--Grids
-	label.grid(column = 0, row = 0)
+    radio1 = Radiobutton(mainFrame, text='Linear function', variable=v,
+                         value=1)
+    radio2 = Radiobutton(mainFrame, text='Quadratic function',
+                         variable=v, value=2)
+    radio3 = Radiobutton(mainFrame, text='Cubic function', variable=v,
+                         value=3)
+    radio4 = Radiobutton(mainFrame, text='Hyperbola function',
+                         variable=v, value=4)
+    radio5 = Radiobutton(mainFrame, text='Square function', variable=v,
+                         value=5)
+    radio6 = Radiobutton(mainFrame, text='Sin function', variable=v,
+                         value=6)
 
-	radio1.grid(column = 0, row = 1)
-	radio2.grid(column = 0, row = 2)
-	radio3.grid(column = 0, row = 3)
-	radio4.grid(column = 0, row = 4)
-	radio5.grid(column = 0, row = 5)
-	radio6.grid(column = 0, row = 6)
+    button = Button(mainFrame, text='CREAT PLOT', command=input_arg)
 
-	button.grid(column = 0, columnspan = 2)
-	#<--Start
-	root.mainloop()
+    # <--Configs
+
+    label.config(font=('Arial', 15, 'bold'))
+
+    bg = '#1FA7E1'
+
+    radio1.config()
+    radio2.config(bg=bg)
+    radio3.config(bg=bg)
+    radio4.config(bg=bg)
+    radio5.config(bg=bg)
+    radio6.config(bg=bg)
+
+    radio1.select()
+
+    button.config(font=['Arial', 15, 'bold'])
+
+    # <--Grids
+
+    label.grid(column=0, row=0)
+
+    radio1.grid(column=0, row=1)
+    radio2.grid(column=0, row=2)
+    radio3.grid(column=0, row=3)
+    radio4.grid(column=0, row=4)
+    radio5.grid(column=0, row=5)
+    radio6.grid(column=0, row=6)
+
+    button.grid(column=0, columnspan=2)
+
+    # <--Start
+
+    mainFrame.mainloop()
 
 
 if __name__ == '__main__':
-	main()
+    main()

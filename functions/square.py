@@ -1,4 +1,7 @@
 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 #<--Import lib
 import math
 import numpy as np

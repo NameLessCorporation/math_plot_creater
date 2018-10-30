@@ -10,7 +10,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_quadratic(k, a, b):
+def create_quadratic(k, a, b):
 	x_points = []
 	y_points = []
 

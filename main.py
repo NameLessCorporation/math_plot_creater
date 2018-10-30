@@ -9,12 +9,13 @@ from tkinter import *
 import numpy as np
 import decimal
 #<--Import functions wish file-->
+from functions.sin import *
 from functions.cubic import *
 from functions.linear import *
 from functions.square import *
 from functions.quadratic import *
 from functions.hyperbola import *
-from functions.sin import *
+from functions.quadraticTrinomial import *
 
 root = None
 root1 = None
@@ -23,6 +24,7 @@ v = None
 k = None
 a = None
 b = None
+c = None
 
 
 def draw():
@@ -31,17 +33,20 @@ def draw():
 	global b
 
 	if v.get() == 1:
-		creat_linear(float(k), float(a), float(b))
+		create_linear(float(k), float(a), float(b))
 	elif v.get() == 2:
-		creat_quadratic(float(k), float(a), float(b))
+		create_quadratic(float(k), float(a), float(b))
 	elif v.get() == 3:
-		creat_cubic(float(k), float(a), float(b))
+		create_cubic(float(k), float(a), float(b))
 	elif v.get() == 4:
-		creat_hyperbola(float(k), float(a), float(b))
+		create_hyperbola(float(k), float(a), float(b))
 	elif v.get() == 5:
-		creat_square(float(k), float(a), float(b))
+		create_square(float(k), float(a), float(b))
 	elif v.get() == 6:
-		creat_sin(float(k), float(a), float(b))
+		create_sin(float(k), float(a), float(b))
+	elif v.get() == 7:
+		create_qt(float(k), float(a), float(b))
+
 
 def creat_plot():
 	global root1
@@ -57,8 +62,7 @@ def creat_plot():
 	draw()
 	
 
-
-def input_arg():
+def input_arg(v):
 	global root
 	global root1
 	global k
@@ -74,19 +78,31 @@ def input_arg():
 
 	root1.config(bg = '#1FA7E1')
 	root1.config()
-
 	#<--Elements
-	label1 = Label(root1, text = 'Input k:', bg='#1FA7E1', fg='white')
+	if v.get() == 7:
+		label1 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
 
-	k = Entry(root1, width = 20)
+		k = Entry(root1, width = 20)
 
-	label2 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
+		label2 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
 
-	a = Entry(root1, width = 20)
+		a = Entry(root1, width = 20)
 
-	label3 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
+		label3 = Label(root1, text = 'Input c:', bg='#1FA7E1', fg='white')
 
-	b = Entry(root1, width = 20)
+		b = Entry(root1, width = 20)
+	else:
+		label1 = Label(root1, text = 'Input k:', bg='#1FA7E1', fg='white')
+
+		k = Entry(root1, width = 20)
+
+		label2 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
+
+		a = Entry(root1, width = 20)
+
+		label3 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
+
+		b = Entry(root1, width = 20)
 
 	button = Button(root1, text = 'Draw', command = creat_plot)
 
@@ -156,8 +172,9 @@ def main():
 	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
 	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
 	radio6 = Radiobutton(root, text="Sin function", variable=v, value=6)
+	radio7 = Radiobutton(root, text="Quadratic trinomial", variable=v, value=7)
 
-	button = Button(root, text = 'CREAT PLOT', command = input_arg)
+	button = Button(root, text = 'CREAT PLOT', command = lambda: input_arg(v))
 	#<--Configs
 	label.config(font = ('Arial', 15, 'bold'))
 
@@ -167,6 +184,7 @@ def main():
 	radio4.config(bg = '#1FA7E1')
 	radio5.config(bg = '#1FA7E1')
 	radio6.config(bg = '#1FA7E1')
+	radio7.config(bg = '#1FA7E1')
 
 	radio1.select()
 
@@ -180,6 +198,7 @@ def main():
 	radio4.grid(column = 0, row = 4)
 	radio5.grid(column = 0, row = 5)
 	radio6.grid(column = 0, row = 6)
+	radio7.grid(column = 0, row = 7)
 
 	button.grid(column = 0, columnspan = 2)
 	#<--Start

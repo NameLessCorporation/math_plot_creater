@@ -10,7 +10,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_square(k, a, b):
+def create_square(k, a, b):
 	x_points = []
 	y_points = []
 

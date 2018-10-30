@@ -9,7 +9,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_linear(k, a, b):
+def create_linear(k, a, b):
 	x_points = []
 	y_points = []
 

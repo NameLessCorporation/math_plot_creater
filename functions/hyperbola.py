@@ -11,7 +11,7 @@ from tkinter import *
 import matplotlib.pyplot as plt
 
 
-def creat_hyperbola(k, a, b):
+def create_hyperbola(k, a, b):
 	x_points = []
 	y_points = []
 

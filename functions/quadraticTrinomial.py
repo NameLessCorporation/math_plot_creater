@@ -8,8 +8,10 @@ from math import *
 from ezprint import *
 from tkinter import *
 import matplotlib.pyplot as plt
+from descriptionFunctions.DescQuadraticTrinomial import *
 
 x_list = x_points = np.arange(-5.0, 5.0, 0.1)
+thirdFrame = None
 x_null_0 = 0
 x_null_1 = 0
 x_null_2 = 0
@@ -31,7 +33,8 @@ def create_qt(a, b, c):
 	plt.arrow(-1000, 0, 2000, 0)
 	plt.axis('equal')
 	plt.show()
-
+	f(a, b, c)
+	main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list)
 	return x_list, y_list
 
 
@@ -57,34 +60,3 @@ def f(a, b, c):
 		x_null_0 = -b / (2 * a)
 	elif D < 0:
 		p('Discriminant < 0')
-
-
-def main():
-	try:
-		a = int(input('Input a: '))
-	except:
-		a = 1
-	try:
-		b = int(input('Input b: '))
-	except:
-		b = 1
-	try:
-		c = int(input('Input c: '))
-	except:
-		c = 1
-	f(a, b, c)
-	cls()
-	create_qt(a, b, c)
-	p('Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c))
-	p('Discriminant: ' + str(D))
-	p('TOPS FUNC.')
-	p('x tops: ' + str(xo))
-	p('y tops: ' + str(yo))
-	p('NULL FUNC.')
-	p('x_0 null: ' + str(x_null_0))
-	p('x_1 null: ' + str(x_null_1))
-	p('x_2 null: ' + str(x_null_2))
-	p('PROPERTIES:')
-	p('1) D(f)=R or (-∞; +∞)\n2) E(f)=[0; +∞)\n3) Even function\n4)The function decreases in the interval (-∞; 0)\n  The function increases in the interval (0; +∞)\n5) Asymptote has not')
-	p('6) Min value of x: ' + str(round(np.amin(x_list), 5)) + '\n   Min value of y: ' + str(round(min(y_list), 5)))
-	p('   Max value of x: ' + str(round(np.amax(x_list), 5)) + '\n   Max value of y: ' + str(round(max(y_list), 5)))

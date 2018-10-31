@@ -297,7 +297,7 @@ def mainFrame():
 	radio7.grid(column = 0, row = 7)
 	radio8.grid(column = 0, row = 8)
 
-	button.grid(column = 0, columnspan = 2)
+	button.grid(column = 0, row = 9)
 
 	main_menu = Menu(firstFrame)
 	firstFrame.config(menu = main_menu)

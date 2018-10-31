@@ -9,7 +9,8 @@ from tkinter import *
 import numpy as np
 import decimal
 #<--Import functions with file-->
-from info import *
+from help.info import *
+from help.authors import *
 from functions.sin import *
 from functions.cos import *
 from functions.cubic import *

@@ -26,12 +26,14 @@ The program is designed for simplified graphing using various libraries.
 ![Hyperb.func](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/6.png)
 ### Square function:
 ![Sq.func](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/7.png)
+### Sine function:
+![Sine func](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/8.png)
 
 ## Programmers:
 [midaef.ru](http://midaef.ru)  
 [stdian.ru](http://stdian.ru)
 
 ## Donate for coffee:
-#### We would be grateful if you would donate us a Cup of coffee)  
+### We would be grateful if you would donate us a Cup of coffee)  
 #### Webmoney **midaef**: WMR **R381836540599**, WMZ **Z286377765031**  
 #### Webmoney **stdian**: WMR **R477293942800**, WMZ **Z187982353639**

@@ -17,10 +17,10 @@ from functions.quadratic import *
 from functions.hyperbola import *
 from functions.quadraticTrinomial import *
 
-root = None
-root1 = None
-v = None
+firstFrame = None
+secondFrame = None
 
+v = None
 k = None
 a = None
 b = None
@@ -49,7 +49,7 @@ def draw():
 
 
 def creat_plot():
-	global root1
+	global secondFrame
 	global v
 	global k
 	global a
@@ -58,53 +58,53 @@ def creat_plot():
 	k = k.get()
 	a = a.get()
 	b = b.get()
-	root1.destroy()
+	secondFrame.destroy()
 	draw()
 	
 
 def input_arg(v):
-	global root
-	global root1
+	global firstFrame
+	global secondFrame
 	global k
 	global a
 	global b
-	#<--Settings for root
-	root.destroy()
-	root1 = Tk()
+	#<--Settings for secondFrame
+	firstFrame.destroy()
+	secondFrame = Tk()
 
-	root1.title('PLOT_CREATER')
+	secondFrame.title('PLOT_CREATER')
 
-	root1.resizable(0, 0)
+	secondFrame.resizable(0, 0)
 
-	root1.config(bg = '#1FA7E1')
-	root1.config()
+	secondFrame.config(bg = '#1FA7E1')
+	secondFrame.config()
 	#<--Elements
 	if v.get() == 7:
-		label1 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
+		label1 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
 
-		k = Entry(root1, width = 20)
+		k = Entry(secondFrame, width = 20)
 
-		label2 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
+		label2 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
 
-		a = Entry(root1, width = 20)
+		a = Entry(secondFrame, width = 20)
 
-		label3 = Label(root1, text = 'Input c:', bg='#1FA7E1', fg='white')
+		label3 = Label(secondFrame, text = 'Input c:', bg='#1FA7E1', fg='white')
 
-		b = Entry(root1, width = 20)
+		b = Entry(secondFrame, width = 20)
 	else:
-		label1 = Label(root1, text = 'Input k:', bg='#1FA7E1', fg='white')
+		label1 = Label(secondFrame, text = 'Input k:', bg='#1FA7E1', fg='white')
 
-		k = Entry(root1, width = 20)
+		k = Entry(secondFrame, width = 20)
 
-		label2 = Label(root1, text = 'Input a:', bg='#1FA7E1', fg='white')
+		label2 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
 
-		a = Entry(root1, width = 20)
+		a = Entry(secondFrame, width = 20)
 
-		label3 = Label(root1, text = 'Input b:', bg='#1FA7E1', fg='white')
+		label3 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
 
-		b = Entry(root1, width = 20)
+		b = Entry(secondFrame, width = 20)
 
-	button = Button(root1, text = 'Draw', command = creat_plot)
+	button = Button(secondFrame, text = 'Draw', command = creat_plot)
 
 	k.delete(0, END)
 	k.insert(0, '1')
@@ -146,35 +146,35 @@ def input_arg(v):
 	button.grid(column = 0, columnspan = 7)
 
 	#<--Start
-	root1.mainloop()
+	secondFrame.mainloop()
 
 
-def main():
-	global root
+def mainFrame():
+	global firstFrame
 	global v
-	#<--Settings for root
-	root = Tk()
+	#<--Settings for firstFrame
+	firstFrame = Tk()
 
-	root.title('PLOT_CREATER')
+	firstFrame.title('PLOT_CREATER')
 
-	root.resizable(0, 0)
+	firstFrame.resizable(0, 0)
 
-	root.config(bg = '#1FA7E1')
-	root.config()
+	firstFrame.config(bg = '#1FA7E1')
+	firstFrame.config()
 
 	v = IntVar()
 	#<--Elements
-	label = Label(root, text = 'CHOOSE PLOT:', bg='#1FA7E1', fg='white')
+	label = Label(firstFrame, text = 'CHOOSE PLOT:', bg='#1FA7E1', fg='white')
 
-	radio1 = Radiobutton(root, text="Linear function", variable=v, value=1)
-	radio2 = Radiobutton(root, text="Quadratic function", variable=v, value=2)
-	radio3 = Radiobutton(root, text="Cubic function", variable=v, value=3)
-	radio4 = Radiobutton(root, text="Hyperbola function", variable=v, value=4)
-	radio5 = Radiobutton(root, text="Square function", variable=v, value=5)
-	radio6 = Radiobutton(root, text="Sin function", variable=v, value=6)
-	radio7 = Radiobutton(root, text="Quadratic trinomial", variable=v, value=7)
+	radio1 = Radiobutton(firstFrame, text="Linear function", variable=v, value=1)
+	radio2 = Radiobutton(firstFrame, text="Quadratic function", variable=v, value=2)
+	radio3 = Radiobutton(firstFrame, text="Cubic function", variable=v, value=3)
+	radio4 = Radiobutton(firstFrame, text="Hyperbola function", variable=v, value=4)
+	radio5 = Radiobutton(firstFrame, text="Square function", variable=v, value=5)
+	radio6 = Radiobutton(firstFrame, text="Sin function", variable=v, value=6)
+	radio7 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=7)
 
-	button = Button(root, text = 'CREAT PLOT', command = lambda: input_arg(v))
+	button = Button(firstFrame, text = 'CREAT PLOT', command = lambda: input_arg(v))
 	#<--Configs
 	label.config(font = ('Arial', 15, 'bold'))
 
@@ -202,8 +202,8 @@ def main():
 
 	button.grid(column = 0, columnspan = 2)
 	#<--Start
-	root.mainloop()
+	firstFrame.mainloop()
 
 
 if __name__ == '__main__':
-	main()
+	mainFrame()

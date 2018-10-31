@@ -13,13 +13,13 @@ from tkinter import *
 from functions.quadraticTrinomial import *
 
 
-def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang):
+def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang, func_name):
 	global thirdFrame
 
 	#<--Settings for secondFrame
 	thirdFrame = Tk()
 
-	thirdFrame.title(str(a) + ' * ' + 'x' + '^2 * ' + str(b) + ' * ' + 'x * ' + str(c))
+	thirdFrame.title(func_name)
 
 	thirdFrame.resizable(0, 0)
 

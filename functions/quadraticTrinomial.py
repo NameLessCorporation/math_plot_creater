@@ -52,8 +52,6 @@ def create_qt(a, b, c, lang):
 		func_name = func_name + ' - ' + str(-c)
 	else:
 		pass
-
-	p(func_name)
 	
 	for k in x_list:
 		func = a * k**2 + b * k + c
@@ -66,6 +64,9 @@ def create_qt(a, b, c, lang):
 
 	plt.grid(color='k', linestyle='-', linewidth=0.5)
 
+	thismanager = plt.get_current_fig_manager()
+	thismanager.window.wm_iconbitmap("docs/favicon.ico")
+	
 	plt.axis('equal')
 	try:
 		f(a, b, c)

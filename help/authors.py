@@ -17,7 +17,7 @@ def authors():
 	fourthFrame.resizable(0, 0)
 
 	fourthFrame.config(bg = '#1FA7E1')
-	fourthFrame.config()
+	fourthFrame.iconbitmap('docs/favicon.ico')
 
 	#<--Elements
 	label1 = Label(fourthFrame, text = 'Authors:', bg='#1FA7E1', fg='white')

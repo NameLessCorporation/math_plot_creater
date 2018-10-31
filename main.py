@@ -131,7 +131,8 @@ def input_arg(v, lang):
 	secondFrame.resizable(0, 0)
 
 	secondFrame.config(bg = '#1FA7E1')
-	secondFrame.config()
+	secondFrame.iconbitmap('docs/favicon.ico')
+	
 	#<--Elements
 	if lang == 'eng':
 		if v.get() == 8:
@@ -243,7 +244,8 @@ def mainFrame():
 	firstFrame.resizable(0, 0)
 
 	firstFrame.config(bg = '#1FA7E1')
-	firstFrame.config()
+
+	firstFrame.iconbitmap('docs/favicon.ico')
 
 	v = IntVar()
 	#<--Elements

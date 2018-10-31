@@ -20,7 +20,7 @@ def desc(k, a, b, lang, func_name):
 	thirdFrame.resizable(0, 0)
 
 	thirdFrame.config(bg = '#1FA7E1')
-	thirdFrame.config()
+	thirdFrame.iconbitmap('docs/favicon.ico')
 
 	x0 = round(-b/k, 3)
 

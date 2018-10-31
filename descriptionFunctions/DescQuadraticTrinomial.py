@@ -24,7 +24,7 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 	thirdFrame.resizable(0, 0)
 
 	thirdFrame.config(bg = '#1FA7E1')
-	thirdFrame.config()
+	thirdFrame.iconbitmap('docs/favicon.ico')
 
 	#<--Elements
 	if lang == 'eng':

@@ -19,7 +19,6 @@ def create_quadratic(k, a, b):
 		y = k * (x ** 2) + b
 		y_points.append(y)
 
-
 	func_name = 'y = '
 	if k != 1:
 		func_name = func_name + str(k) + ' * '
@@ -30,14 +29,15 @@ def create_quadratic(k, a, b):
 	else:
 		func_name = func_name + 'x^2'
 
-
 	if b > 0:
 		func_name = func_name +  ' + ' + str(b)
 	elif b < 0:
 		func_name = func_name + ' - ' + str(b * -1)
 
-
 	plt.gcf().canvas.set_window_title(func_name)
+
+	thismanager = plt.get_current_fig_manager()
+	thismanager.window.wm_iconbitmap("docs/favicon.ico")
 
 	plt.grid(color='k', linestyle='-', linewidth=0.5)
 

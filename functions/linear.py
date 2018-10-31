@@ -30,12 +30,10 @@ def create_linear(k, a, b, lang):
 	else:
 		func_name = func_name + 'x'
 
-
 	if b > 0:
 		func_name = func_name +  ' + ' + str(b)
 	elif b < 0:
 		func_name = func_name + ' - ' + str(b * -1)
-
 
 	plt.gcf().canvas.set_window_title(func_name)
 
@@ -48,6 +46,9 @@ def create_linear(k, a, b, lang):
 
 	plt.title(func_name)
 	plt.axis('equal')
+
+	thismanager = plt.get_current_fig_manager()
+	thismanager.window.wm_iconbitmap("docs/favicon.ico")
 
 	start_frame = threading.Thread(target= lambda : desc(k, a, b, lang, func_name))
 	start_frame.start()

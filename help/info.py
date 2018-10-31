@@ -17,7 +17,7 @@ def info():
 	fourthFrame.resizable(0, 0)
 
 	fourthFrame.config(bg = '#1FA7E1')
-	fourthFrame.config()
+	fourthFrame.iconbitmap('docs/favicon.ico')
 
 	#<--Elements
 	label2 = Label(fourthFrame, text = 'Linear function - y=k(x-a)+b', bg='#1FA7E1', fg='white')

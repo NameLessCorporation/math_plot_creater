@@ -4,12 +4,12 @@
 
 The program is designed for simplified graphing using different libraries.  
 It can not only build graphs, but also to determine their properties  
-The program contains the following graphs:
+The program contains the following graphs:  
 **Linear function** - y=k(x-a)+b  
 **Quadratic function** - y=k(x-a)^2+b  
-**Square function** - k\*sqrt(x-a)+b  
+**Square function** - y=k\*sqrt(x-a)+b  
 **Cubic function** - y=k(x-a)^3+b  
-**Hyperbola function** - k/(x-a)+b  
+**Hyperbola function** - y=k/(x-a)+b  
 **Sine function** - y=k\*sin(x-a)+b  
 **Cosine function** - y=k\*cos(x-a)+b  
 **QuadraticTrinomial** - y=ax^2+bx+c  
@@ -24,22 +24,33 @@ The program contains the following graphs:
 
 ## Screenshots:
 
-![Main window](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/1.png)  
-![Arg.Window](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/2.png)
-### Linear function:
-![Linear function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/3.png)
+![Main window](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/main.png)  
+![Arg.Window](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/args.png)  
+![Info](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/info.png)
+### Linear function: 
+#### y=k(x-a)+b
+![Linear function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/linear.png)
 ### Quadratic function:
-![Quadratic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/4.png)
+#### y=k(x-a)^2+b
+![Quadratic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/quadratic.png)
 ### Cubic function:
-![Cubic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/5.png)
+#### y=k(x-a)^3+b
+![Cubic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/cubic.png)
 ### Hyperbola function:
-![Hyperbola function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/6.png)
+#### y=k/(x-a)+b 
+![Hyperbola function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/hyperbola.png)
 ### Square function:
-![Squarefunction](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/7.png)
+####y=k\*sqrt(x-a)+b
+![Squarefunction](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/square.png)
 ### Sine function:
-![Sine function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/8.png)
+#### y=k\*sin(x-a)+b
+![Sine function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/sin.png)
 ### Cosine function:
-![Cosine function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/9.png)
+#### y=k\*cos(x-a)+b
+![Cosine function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/cos.png)
+### Quadratic Trinomial:
+#### y=ax^2+bx+c
+![Quadratic Trinomial](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/qt.png)
 
 ## Programmers:
 [midaef.ru](http://midaef.ru)  

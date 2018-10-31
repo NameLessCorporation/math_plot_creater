@@ -22,9 +22,9 @@ def info():
 	#<--Elements
 	label2 = Label(fourthFrame, text = 'Linear function - y=k(x-a)+b', bg='#1FA7E1', fg='white')
 	label3 = Label(fourthFrame, text = 'Quadratic function - y=k(x-a)^2+b', bg='#1FA7E1', fg='white')
-	label4 = Label(fourthFrame, text = 'Square function - k*sqrt(x-a)+b', bg='#1FA7E1', fg='white')
+	label4 = Label(fourthFrame, text = 'Square function - y=k*sqrt(x-a)+b', bg='#1FA7E1', fg='white')
 	label5 = Label(fourthFrame, text = 'Cubic function - y=k(x-a)^3+b', bg='#1FA7E1', fg='white')
-	label6 = Label(fourthFrame, text = 'Hyperbola function - k/(x-a)+b', bg='#1FA7E1', fg='white')
+	label6 = Label(fourthFrame, text = 'Hyperbola function - y=k/(x-a)+b', bg='#1FA7E1', fg='white')
 	label7 = Label(fourthFrame, text = 'Sine function - y=k*sin(x-a)+b', bg='#1FA7E1', fg='white')
 	label8 = Label(fourthFrame, text = 'Cosine function - y=k*cos(x-a)+b', bg='#1FA7E1', fg='white')
 	label9 = Label(fourthFrame, text = 'QuadraticTrinomial - y=ax^2+bx+c', bg='#1FA7E1', fg='white')

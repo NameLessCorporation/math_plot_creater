@@ -24,7 +24,7 @@ yo = 0
 D = 0
 
 
-def create_qt(a, b, c):
+def create_qt(a, b, c, lang):
 	global start_frame
 	global x_list
 	global y_list
@@ -38,7 +38,7 @@ def create_qt(a, b, c):
 	plt.axis('equal')
 	try:
 		f(a, b, c)
-		start_frame = threading.Thread(target= lambda : main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list))
+		start_frame = threading.Thread(target= lambda : main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang))
 		start_frame.start()
 	except:
 		pass
@@ -69,4 +69,4 @@ def f(a, b, c):
 	elif D == 0:
 		x_null_0 = -b / (2 * a)
 	elif D < 0:
-		p('Discriminant < 0')
+		pass

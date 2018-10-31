@@ -98,7 +98,7 @@ def draw():
 	elif v.get() == 7:
 		create_cos(float(k), float(a), float(b))
 	elif v.get() == 8:
-		create_qt(float(k), float(a), float(b))
+		create_qt(float(k), float(a), float(b), lang)
 
 
 def creat_plot():

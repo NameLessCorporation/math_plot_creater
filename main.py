@@ -37,20 +37,21 @@ def set_eng():
 	global firstFrame
 	global lang
 
-	lang = 'eng'
+	if lang != 'eng':
+		lang = 'eng'
 
-	firstFrameElements[0].config(text = 'CHOOSE PLOT:')
+		firstFrameElements[0].config(text = 'CHOOSE PLOT:')
 
-	firstFrameElements[1].config(text = 'Linear function')
-	firstFrameElements[2].config(text = 'Quadratic function')
-	firstFrameElements[3].config(text = 'Cubic function')
-	firstFrameElements[4].config(text = 'Hyperbola function')
-	firstFrameElements[5].config(text = 'Square function')
-	firstFrameElements[6].config(text = 'Sine function')
-	firstFrameElements[7].config(text = 'Cosine function')
-	firstFrameElements[8].config(text = 'Quadratic trinomial')
+		firstFrameElements[1].config(text = 'Linear function')
+		firstFrameElements[2].config(text = 'Quadratic function')
+		firstFrameElements[3].config(text = 'Cubic function')
+		firstFrameElements[4].config(text = 'Hyperbola function')
+		firstFrameElements[5].config(text = 'Square function')
+		firstFrameElements[6].config(text = 'Sine function')
+		firstFrameElements[7].config(text = 'Cosine function')
+		firstFrameElements[8].config(text = 'Quadratic trinomial')
 
-	firstFrameElements[9].config(text = 'DRAW FUNCTION')
+		firstFrameElements[9].config(text = 'DRAW FUNCTION')
 
 
 def set_rus():
@@ -58,20 +59,21 @@ def set_rus():
 	global firstFrame
 	global lang
 
-	lang = 'rus'
+	if lang != 'rus':
+		lang = 'rus'
 
-	firstFrameElements[0].config(text = 'ВЫБЕРИТЕ ГРАФИК:')
+		firstFrameElements[0].config(text = 'ВЫБЕРИТЕ ГРАФИК:')
 
-	firstFrameElements[1].config(text = 'Линейная функция')
-	firstFrameElements[2].config(text = 'Квадратичния функция')
-	firstFrameElements[3].config(text = 'Кубическая функция')
-	firstFrameElements[4].config(text = 'Обратная пропорциональность')
-	firstFrameElements[5].config(text = 'Корневая функция')
-	firstFrameElements[6].config(text = 'Функция синуса')
-	firstFrameElements[7].config(text = 'Функция косинуса')
-	firstFrameElements[8].config(text = 'Квадратный трёхчлен')
+		firstFrameElements[1].config(text = 'Линейная функция')
+		firstFrameElements[2].config(text = 'Квадратичния функция')
+		firstFrameElements[3].config(text = 'Кубическая функция')
+		firstFrameElements[4].config(text = 'Обратная пропорциональность')
+		firstFrameElements[5].config(text = 'Корневая функция')
+		firstFrameElements[6].config(text = 'Функция синуса')
+		firstFrameElements[7].config(text = 'Функция косинуса')
+		firstFrameElements[8].config(text = 'Квадратный трёхчлен')
 
-	firstFrameElements[9].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
+		firstFrameElements[9].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
 
 
 
@@ -112,7 +114,7 @@ def creat_plot():
 	draw()
 	
 
-def input_arg(v):
+def input_arg(v, lang):
 	global firstFrame
 	global secondFrame
 	global k
@@ -129,32 +131,60 @@ def input_arg(v):
 	secondFrame.config(bg = '#1FA7E1')
 	secondFrame.config()
 	#<--Elements
-	if v.get() == 8:
-		label1 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
+	if lang == 'eng':
+		if v.get() == 8:
+			label1 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
 
-		k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = 20)
 
-		label2 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
 
-		a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = 20)
 
-		label3 = Label(secondFrame, text = 'Input c:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Input c:', bg='#1FA7E1', fg='white')
 
-		b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = 20)
+		else:
+			label1 = Label(secondFrame, text = 'Input k:', bg='#1FA7E1', fg='white')
+
+			k = Entry(secondFrame, width = 20)
+
+			label2 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
+
+			a = Entry(secondFrame, width = 20)
+
+			label3 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
+
+			b = Entry(secondFrame, width = 20)
+
+		button = Button(secondFrame, text = 'DRAW', command = creat_plot)
 	else:
-		label1 = Label(secondFrame, text = 'Input k:', bg='#1FA7E1', fg='white')
+		if v.get() == 8:
+			label1 = Label(secondFrame, text = 'Введите a:', bg='#1FA7E1', fg='white')
 
-		k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = 20)
 
-		label2 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Введите b:', bg='#1FA7E1', fg='white')
 
-		a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = 20)
 
-		label3 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Введите c:', bg='#1FA7E1', fg='white')
 
-		b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = 20)
+		else:
+			label1 = Label(secondFrame, text = 'Введите k:', bg='#1FA7E1', fg='white')
 
-	button = Button(secondFrame, text = 'Draw', command = creat_plot)
+			k = Entry(secondFrame, width = 20)
+
+			label2 = Label(secondFrame, text = 'Введите a:', bg='#1FA7E1', fg='white')
+
+			a = Entry(secondFrame, width = 20)
+
+			label3 = Label(secondFrame, text = 'Введите b:', bg='#1FA7E1', fg='white')
+
+			b = Entry(secondFrame, width = 20)
+
+		button = Button(secondFrame, text = 'НАЧЕРТИТЬ', command = creat_plot)
 
 	k.delete(0, END)
 	k.insert(0, '1')
@@ -236,7 +266,7 @@ def mainFrame():
 	firstFrameElements.append(radio7)
 	firstFrameElements.append(radio8)
 
-	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v))
+	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v, lang))
 
 	firstFrameElements.append(button)
 	#<--Configs

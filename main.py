@@ -9,6 +9,7 @@ from tkinter import *
 import numpy as np
 import decimal
 #<--Import functions with file-->
+from info import *
 from functions.sin import *
 from functions.cos import *
 from functions.cubic import *
@@ -301,9 +302,15 @@ def mainFrame():
 	main_menu = Menu(firstFrame)
 	firstFrame.config(menu = main_menu)
 	lang_menu = Menu(main_menu)
+	info_menu = Menu(main_menu)
+
 	main_menu.add_cascade(label="Language", menu = lang_menu)
+	main_menu.add_cascade(label="Info", menu = info_menu)
+
 	lang_menu.add_command(label="English", command = set_eng)
 	lang_menu.add_command(label="Russian", command = set_rus)
+	info_menu.add_command(label="Help", command = info)
+	info_menu.add_command(label="Authors", command = authors)
 	#<--Start
 	firstFrame.mainloop()
 

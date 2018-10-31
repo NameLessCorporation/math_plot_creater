@@ -32,7 +32,7 @@ The program contains the following graphs:
 ![Linear function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/linear.png)
 ### Quadratic function:
 #### y=k(x-a)^2+b
-![Quadratic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/quadratic.png)
+![Quadratic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/quadro.png)
 ### Cubic function:
 #### y=k(x-a)^3+b
 ![Cubic function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/cubic.png)
@@ -40,7 +40,7 @@ The program contains the following graphs:
 #### y=k/(x-a)+b 
 ![Hyperbola function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/hyperbola.png)
 ### Square function:
-####y=k\*sqrt(x-a)+b
+#### y=k\*sqrt(x-a)+b
 ![Squarefunction](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/square.png)
 ### Sine function:
 #### y=k\*sin(x-a)+b

@@ -52,13 +52,17 @@ def create_qt(a, b, c, lang):
 		func_name = func_name + ' - ' + str(-c)
 	else:
 		pass
-	
+
+
+	f(a, b, c)
+	x_list = list(np.arange(xo - 5.0, xo - 0.005, 0.005)) + [xo] + list(np.arange(xo + 0.05, xo + 5.005, 0.005))
+
 	for k in x_list:
 		func = a * k**2 + b * k + c
 		y_list.append(func)
 	plt.plot(x_list, y_list, 'r')
-	plt.arrow(0, -1000, 0, 2000)
-	plt.arrow(-1000, 0, 2000, 0)
+	plt.arrow(0, -1000000, 0, 2000000)
+	plt.arrow(-1000000, 0, 2000000, 0)
 
 	plt.gcf().canvas.set_window_title(func_name)
 
@@ -69,7 +73,6 @@ def create_qt(a, b, c, lang):
 	
 	plt.axis('equal')
 	try:
-		f(a, b, c)
 		start_frame = threading.Thread(target= lambda : main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang, func_name))
 		start_frame.start()
 	except:
@@ -91,14 +94,14 @@ def f(a, b, c):
 
 	#search tops
 	xo = -b / (2 * a)
-	yo = -((b**2 - 4 * a * c) / 4 * a)
+	yo = round(-((b**2 - 4 * a * c) / 4 * a), 3)
 	#search Disc.
 	D = b**2 - 4 * a * c
 	if D > 0:
 		#search null func.
-		x_null_1 = (-b + sqrt(D)) / (2 * a)
-		x_null_2 = (-b - sqrt(D)) / (2 * a)
+		x_null_1 = round((-b + sqrt(D)) / (2 * a), 3)
+		x_null_2 = round((-b - sqrt(D)) / (2 * a), 3)
 	elif D == 0:
-		x_null_0 = -b / (2 * a)
+		x_null_0 = round(-b / (2 * a), 3)
 	elif D < 0:
 		pass

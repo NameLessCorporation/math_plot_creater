@@ -26,6 +26,8 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 	thirdFrame.config(bg = '#1FA7E1')
 	thirdFrame.iconbitmap('docs/favicon.ico')
 
+	xo = round(xo, 3)
+
 	#<--Elements
 	if lang == 'eng':
 		label1 = Label(thirdFrame, text = 'Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c), bg='#1FA7E1', fg='white')

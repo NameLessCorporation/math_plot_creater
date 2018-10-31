@@ -38,16 +38,14 @@ def create_square(k, a, b):
 	elif b < 0:
 		func_name = func_name + ' - ' + str(b * -1)
 
+	plt.gcf().canvas.set_window_title(func_name)
 
-	os_x = [min(x_points) - 5, max(x_points) + 5]
-	os_y = [min(y_points) - 5, max(y_points) + 5]
+	plt.grid(color='k', linestyle='-', linewidth=0.5)
 
-	plt.plot(os_x, [0, 0], '-b', markersize = 30)
-	plt.plot([0, 0], os_y, '-b', markersize = 30)
-
+	plt.arrow(0, -10000, 0, 20000, fc='k', ec='k')
+	plt.arrow(-10000, 0, 20000, 0, fc='k', ec='k')
 	plt.plot(x_points, y_points, 'r')
 
-	plt.gca().legend(('x', 'y', 'f(x)'))
 	plt.title(func_name)
 	plt.axis('equal')
 	plt.show()

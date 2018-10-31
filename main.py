@@ -21,11 +21,58 @@ from functions.quadraticTrinomial import *
 firstFrame = None
 secondFrame = None
 
+firstFrameElements = []
+
 v = None
 k = None
 a = None
 b = None
 c = None
+
+lang = 'eng'
+
+
+def set_eng():
+	global firstFrameElements
+	global firstFrame
+	global lang
+
+	lang = 'eng'
+
+	firstFrameElements[0].config(text = 'CHOOSE PLOT:')
+
+	firstFrameElements[1].config(text = 'Linear function')
+	firstFrameElements[2].config(text = 'Quadratic function')
+	firstFrameElements[3].config(text = 'Cubic function')
+	firstFrameElements[4].config(text = 'Hyperbola function')
+	firstFrameElements[5].config(text = 'Square function')
+	firstFrameElements[6].config(text = 'Sine function')
+	firstFrameElements[7].config(text = 'Cosine function')
+	firstFrameElements[8].config(text = 'Quadratic trinomial')
+
+	firstFrameElements[9].config(text = 'DRAW FUNCTION')
+
+
+def set_rus():
+	global firstFrameElements
+	global firstFrame
+	global lang
+
+	lang = 'rus'
+
+	firstFrameElements[0].config(text = 'ВЫБЕРИТЕ ГРАФИК:')
+
+	firstFrameElements[1].config(text = 'Линейная функция')
+	firstFrameElements[2].config(text = 'Квадратичния функция')
+	firstFrameElements[3].config(text = 'Кубическая функция')
+	firstFrameElements[4].config(text = 'Обратная пропорциональность')
+	firstFrameElements[5].config(text = 'Корневая функция')
+	firstFrameElements[6].config(text = 'Функция синуса')
+	firstFrameElements[7].config(text = 'Функция косинуса')
+	firstFrameElements[8].config(text = 'Квадратный трёхчлен')
+
+	firstFrameElements[9].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
+
 
 
 def draw():
@@ -153,6 +200,7 @@ def input_arg(v):
 
 
 def mainFrame():
+	global firstFrameElements
 	global firstFrame
 	global v
 	#<--Settings for firstFrame
@@ -168,6 +216,7 @@ def mainFrame():
 	v = IntVar()
 	#<--Elements
 	label = Label(firstFrame, text = 'CHOOSE PLOT:', bg='#1FA7E1', fg='white')
+	firstFrameElements.append(label)
 
 	radio1 = Radiobutton(firstFrame, text="Linear function", variable=v, value=1)
 	radio2 = Radiobutton(firstFrame, text="Quadratic function", variable=v, value=2)
@@ -178,7 +227,18 @@ def mainFrame():
 	radio7 = Radiobutton(firstFrame, text="Cosine function", variable=v, value=7)
 	radio8 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=8)
 
-	button = Button(firstFrame, text = 'CREAT PLOT', command = lambda: input_arg(v))
+	firstFrameElements.append(radio1)
+	firstFrameElements.append(radio2)
+	firstFrameElements.append(radio3)
+	firstFrameElements.append(radio4)
+	firstFrameElements.append(radio5)
+	firstFrameElements.append(radio6)
+	firstFrameElements.append(radio7)
+	firstFrameElements.append(radio8)
+
+	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v))
+
+	firstFrameElements.append(button)
 	#<--Configs
 	label.config(font = ('Arial', 15, 'bold'))
 
@@ -207,6 +267,13 @@ def mainFrame():
 	radio8.grid(column = 0, row = 8)
 
 	button.grid(column = 0, columnspan = 2)
+
+	main_menu = Menu(firstFrame)
+	firstFrame.config(menu = main_menu)
+	lang_menu = Menu(main_menu)
+	main_menu.add_cascade(label="Language", menu = lang_menu)
+	lang_menu.add_command(label="English", command = set_eng)
+	lang_menu.add_command(label="Russian", command = set_rus)
 	#<--Start
 	firstFrame.mainloop()
 

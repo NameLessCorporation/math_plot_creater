@@ -32,6 +32,6 @@ The program is designed for simplified graphing using various libraries.
 [stdian.ru](http://stdian.ru)
 
 ## Donate for coffee:
-### We would be grateful if you would donate us a Cup of coffee)  
-### Webmoney **midaef**: WMR **R381836540599**, WMZ **Z286377765031**  
-### Webmoney **stdian**: WMR **R477293942800**, WMZ **Z187982353639**
+#### We would be grateful if you would donate us a Cup of coffee)  
+#### Webmoney **midaef**: WMR **R381836540599**, WMZ **Z286377765031**  
+#### Webmoney **stdian**: WMR **R477293942800**, WMZ **Z187982353639**

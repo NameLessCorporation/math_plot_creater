@@ -8,8 +8,9 @@ from ezprint import *
 from tkinter import *
 import numpy as np
 import decimal
-#<--Import functions wish file-->
+#<--Import functions with file-->
 from functions.sin import *
+from functions.cos import *
 from functions.cubic import *
 from functions.linear import *
 from functions.square import *
@@ -45,6 +46,8 @@ def draw():
 	elif v.get() == 6:
 		create_sin(float(k), float(a), float(b))
 	elif v.get() == 7:
+		create_cos(float(k), float(a), float(b))
+	elif v.get() == 8:
 		create_qt(float(k), float(a), float(b))
 
 
@@ -79,7 +82,7 @@ def input_arg(v):
 	secondFrame.config(bg = '#1FA7E1')
 	secondFrame.config()
 	#<--Elements
-	if v.get() == 7:
+	if v.get() == 8:
 		label1 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
 
 		k = Entry(secondFrame, width = 20)
@@ -171,8 +174,9 @@ def mainFrame():
 	radio3 = Radiobutton(firstFrame, text="Cubic function", variable=v, value=3)
 	radio4 = Radiobutton(firstFrame, text="Hyperbola function", variable=v, value=4)
 	radio5 = Radiobutton(firstFrame, text="Square function", variable=v, value=5)
-	radio6 = Radiobutton(firstFrame, text="Sin function", variable=v, value=6)
-	radio7 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=7)
+	radio6 = Radiobutton(firstFrame, text="Sine function", variable=v, value=6)
+	radio7 = Radiobutton(firstFrame, text="Cosine function", variable=v, value=7)
+	radio8 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=8)
 
 	button = Button(firstFrame, text = 'CREAT PLOT', command = lambda: input_arg(v))
 	#<--Configs
@@ -185,6 +189,7 @@ def mainFrame():
 	radio5.config(bg = '#1FA7E1')
 	radio6.config(bg = '#1FA7E1')
 	radio7.config(bg = '#1FA7E1')
+	radio8.config(bg = '#1FA7E1')
 
 	radio1.select()
 
@@ -199,6 +204,7 @@ def mainFrame():
 	radio5.grid(column = 0, row = 5)
 	radio6.grid(column = 0, row = 6)
 	radio7.grid(column = 0, row = 7)
+	radio8.grid(column = 0, row = 8)
 
 	button.grid(column = 0, columnspan = 2)
 	#<--Start

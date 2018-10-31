@@ -6,10 +6,12 @@
 import numpy as np
 from ezprint import *
 from tkinter import *
+from threading import Thread
 import matplotlib.pyplot as plt
+from descriptionFunctions.DescLinear import *
 
 
-def create_linear(k, a, b):
+def create_linear(k, a, b, lang):
 	x_points = []
 	y_points = []
 
@@ -46,5 +48,9 @@ def create_linear(k, a, b):
 
 	plt.title(func_name)
 	plt.axis('equal')
+
+	start_frame = threading.Thread(target= lambda : desc(k, a, b, lang, func_name))
+	start_frame.start()
+
 	plt.show()
 

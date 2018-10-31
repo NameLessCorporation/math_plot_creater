@@ -85,7 +85,7 @@ def draw():
 	global b
 
 	if v.get() == 1:
-		create_linear(float(k), float(a), float(b))
+		create_linear(float(k), float(a), float(b), lang)
 	elif v.get() == 2:
 		create_quadratic(float(k), float(a), float(b))
 	elif v.get() == 3:

@@ -2,7 +2,17 @@
 
 ## Description:
 
-The program is designed for simplified graphing using various libraries.
+The program is designed for simplified graphing using different libraries.  
+It can not only build graphs, but also to determine their properties  
+The program contains the following graphs:
+**Linear function** - y=k(x-a)+b  
+**Quadratic function** - y=k(x-a)^2+b  
+**Square function** - k\*sqrt(x-a)+b  
+**Cubic function** - y=k(x-a)^3+b  
+**Hyperbola function** - k/(x-a)+b  
+**Sine function** - y=k\*sin(x-a)+b  
+**Cosine function** - y=k\*cos(x-a)+b  
+**QuadraticTrinomial** - y=ax^2+bx+c  
 
 ## What is Lib. use?
 

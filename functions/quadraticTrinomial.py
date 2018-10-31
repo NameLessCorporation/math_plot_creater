@@ -4,13 +4,16 @@
 
 #<--Import lib
 import numpy as np
+import matplotlib.pyplot as plt
+
 from math import *
 from ezprint import *
 from tkinter import *
-import matplotlib.pyplot as plt
+from threading import Thread
 from descriptionFunctions.DescQuadraticTrinomial import *
 
 x_list = x_points = np.arange(-5.0, 5.0, 0.1)
+start_frame = None
 thirdFrame = None
 x_null_0 = 0
 x_null_1 = 0
@@ -22,6 +25,7 @@ D = 0
 
 
 def create_qt(a, b, c):
+	global start_frame
 	global x_list
 	global y_list
 
@@ -32,9 +36,15 @@ def create_qt(a, b, c):
 	plt.arrow(0, -1000, 0, 2000)
 	plt.arrow(-1000, 0, 2000, 0)
 	plt.axis('equal')
+	try:
+		f(a, b, c)
+		start_frame = threading.Thread(target= lambda : main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list))
+		start_frame.start()
+	except:
+		pass
+		
 	plt.show()
-	f(a, b, c)
-	main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list)
+	
 	return x_list, y_list
 
 

@@ -3,11 +3,13 @@
 # -*- coding: utf-8 -*-
 
 #<--Import lib
+import matplotlib.pyplot as plt
 import numpy as np
+import threading
+
 from math import *
 from ezprint import *
 from tkinter import *
-import matplotlib.pyplot as plt
 from functions.quadraticTrinomial import *
 
 

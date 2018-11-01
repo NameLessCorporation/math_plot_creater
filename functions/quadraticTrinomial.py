@@ -53,7 +53,6 @@ def create_qt(a, b, c, lang):
 	else:
 		pass
 
-
 	f(a, b, c)
 	x_list = list(np.arange(xo - 5.0, xo - 0.005, 0.005)) + [xo] + list(np.arange(xo + 0.05, xo + 5.005, 0.005))
 

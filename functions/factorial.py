@@ -11,16 +11,15 @@ y_list = []
 x_list = []
 
 
+def create_plot(x):
+	plt.plot(x_list, y_list, 'r')
 
-def create_plot():
-	plt.plot(x_list, y_list)
+	plt.arrow(0, -1000000, 0, 2000000)
+	plt.arrow(-1000000, 0, 2000000, 0)
 
-	plt.arrow(0, -1000000, 0, 1000000)
-	plt.arrow(-1000000, 0, 1000000, 0)
+	plt.gcf().canvas.set_window_title('y=!' + str(x))
 
-	plt.gcf().canvas.set_window_title('y=!x')
-
-	plt.grid(color='k', linestyle='-', linewidth=1)
+	plt.grid(color='k', linestyle='-', linewidth=0.5)
 
 	plt.axis('equal')
 
@@ -37,14 +36,8 @@ def search_points(x, lang):
 	global x_list
 	global y_list
 
-	for i in np.arange(0, 5):
+	for i in np.arange(0, x):
 		x_list.append(i)		
 		y = create_fact(i)
 		y_list.append(y)
-	print('X points: ')
-	for i in y_list:
-		print(i)
-	print('Y points: ')
-	for i in x_list:
-		print(i)
-	create_plot()
+	create_plot(x)

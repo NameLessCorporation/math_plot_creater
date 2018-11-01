@@ -91,8 +91,6 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 	label9.config(font = ('Arial', 15, 'bold'))
 	label10.config(font = ('Arial', 15, 'bold'))
 	label11.config(font = ('Arial', 15, 'bold'))
-	# label12.config(font = ('Arial', 15, 'bold'))
-	# label13.config(font = ('Arial', 15, 'bold'))
 
 	#<--Grids
 	label1.grid(column = 0, row = 0)
@@ -106,8 +104,6 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 	label9.grid(column = 0, row = 8)
 	label10.grid(column = 0, row = 9)
 	label11.grid(column = 0, row = 10)
-	# label12.grid(column = 0, row = 11)
-	# label13.grid(column = 0, row = 12)
 
 	#<--Start
 	thirdFrame.mainloop()

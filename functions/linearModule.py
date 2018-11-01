@@ -33,6 +33,16 @@ def create_plot(k, a, b):
 		func_name = 'y=' + str(k) + '|x-' + str(-a) + '|' + '+' + str(b)
 	elif a > 0 and b < 0:
 		func_name = 'y=' + str(k) + '|x+' + str(a) + '|' + '-' + str(-b)
+	elif a == 0 and b == 0:
+		func_name = 'y=' + str(k) + '|x|'
+	elif a == 0 and b > 0:
+		func_name = 'y=' + str(k) + '|x|' + '+' + str(b)
+	elif a == 0 and b < 0:
+		func_name = 'y=' + str(k) + '|x|' + '-' + str(-b)
+	elif a > 0 and b == 0:
+		func_name = 'y=' + str(k) + '|x+' + str(a) + '|'
+	elif a < 0 and b == 0:
+		func_name = 'y=' + str(k) + '|x-' + str(-a) + '|'
 
 	plt.gcf().canvas.set_window_title(func_name)
 
@@ -54,8 +64,6 @@ def create_plot(k, a, b):
 def create_linear_with_module(k, a, b, lang):
 	global y_points
 	global x_points
-
-	xo = round(-b/k, 3)
 
 	x_list = list(np.arange(a - 5.0, a - 0.005, 0.005)) + [a] + list(np.arange(a + 0.05, a + 5.005, 0.005))
 

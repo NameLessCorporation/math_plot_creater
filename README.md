@@ -13,7 +13,8 @@ The program contains the following graphs:
 **Sine function** - y=k\*sin(x-a)+b  
 **Cosine function** - y=k\*cos(x-a)+b  
 **QuadraticTrinomial** - y=ax^2+bx+c  
-**Factorial function** - y=!x
+**Factorial function** - y=!x  
+**Linear function with module** - y=k|x-a|+b
 
 ## What is Lib. use?
 
@@ -55,6 +56,9 @@ The program contains the following graphs:
 ### Factorial function:
 #### y=!x
 ![Factorial function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/factorial.png)
+### Linear function with module:
+#### y=k|x-a|+b
+![Linear function with module:](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/lfwm.png)
 
 ## Programmers:
 [midaef.ru](http://midaef.ru)  

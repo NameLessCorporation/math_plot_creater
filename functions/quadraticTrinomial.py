@@ -69,6 +69,8 @@ def create_qt(a, b, c, lang):
 
 	thismanager = plt.get_current_fig_manager()
 	thismanager.window.wm_iconbitmap("docs/favicon.ico")
+
+	plt.title(func_name)
 	
 	plt.axis('equal')
 	try:

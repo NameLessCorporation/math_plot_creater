@@ -18,6 +18,10 @@ def create_plot(x):
 	plt.arrow(-1000000, 0, 2000000, 0)
 
 	plt.gcf().canvas.set_window_title('y=!' + str(x))
+	plt.title('y=!' + str(x))
+
+	thismanager = plt.get_current_fig_manager()
+	thismanager.window.wm_iconbitmap("docs/favicon.ico")
 
 	plt.grid(color='k', linestyle='-', linewidth=0.5)
 

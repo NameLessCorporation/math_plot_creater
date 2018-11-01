@@ -54,7 +54,7 @@ The program contains the following graphs:
 ![Quadratic Trinomial](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/qt.png)
 ### Factorial function:
 #### y=!x
-![Factorial function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/fact.png)
+![Factorial function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/factorial.png)
 
 ## Programmers:
 [midaef.ru](http://midaef.ru)  

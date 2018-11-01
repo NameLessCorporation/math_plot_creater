@@ -19,6 +19,7 @@ from functions.square import *
 from functions.factorial import *
 from functions.quadratic import *
 from functions.hyperbola import *
+from functions.linearModule import *
 from functions.quadraticTrinomial import *
 
 firstFrame = None
@@ -54,8 +55,9 @@ def set_eng():
 		firstFrameElements[7].config(text = 'Cosine function')
 		firstFrameElements[8].config(text = 'Quadratic trinomial')
 		firstFrameElements[9].config(text = 'Factorial function')
+		firstFrameElements[10].config(text = '|Linear| function')
 
-		firstFrameElements[10].config(text = 'DRAW FUNCTION')
+		firstFrameElements[11].config(text = 'DRAW FUNCTION')
 
 
 def set_rus():
@@ -77,8 +79,9 @@ def set_rus():
 		firstFrameElements[7].config(text = 'Функция косинуса')
 		firstFrameElements[8].config(text = 'Квадратный трёхчлен')
 		firstFrameElements[9].config(text = 'Функция факториал')
+		firstFrameElements[10].config(text = '|Линейная| функция')
 
-		firstFrameElements[10].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
+		firstFrameElements[11].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
 
 
 
@@ -105,6 +108,8 @@ def draw():
 		create_qt(float(k), float(a), float(b), lang)
 	elif v.get() == 9:
 		search_points(int(k), lang)
+	elif v.get() == 10:
+		create_linear_with_module(float(k), float(a), float(b), lang)
 
 
 def creat_plot():
@@ -275,6 +280,7 @@ def mainFrame():
 	radio7 = Radiobutton(firstFrame, text="Cosine function", variable=v, value=7)
 	radio8 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=8)
 	radio9 = Radiobutton(firstFrame, text="Factorial function", variable=v, value=9)
+	radio10 = Radiobutton(firstFrame, text="|Linear| function", variable=v, value=10)
 
 	firstFrameElements.append(radio1)
 	firstFrameElements.append(radio2)
@@ -285,6 +291,7 @@ def mainFrame():
 	firstFrameElements.append(radio7)
 	firstFrameElements.append(radio8)
 	firstFrameElements.append(radio9)
+	firstFrameElements.append(radio10)
 
 	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v, lang))
 
@@ -301,6 +308,7 @@ def mainFrame():
 	radio7.config(bg = '#1FA7E1')
 	radio8.config(bg = '#1FA7E1')
 	radio9.config(bg = '#1FA7E1')
+	radio10.config(bg = '#1FA7E1')
 
 	radio1.select()
 
@@ -317,8 +325,9 @@ def mainFrame():
 	radio7.grid(column = 0, row = 7)
 	radio8.grid(column = 0, row = 8)
 	radio9.grid(column = 0, row = 9)
+	radio10.grid(column = 0, row = 10)
 
-	button.grid(column = 0, row = 10)
+	button.grid(column = 0, row = 11)
 
 	main_menu = Menu(firstFrame)
 	firstFrame.config(menu = main_menu)

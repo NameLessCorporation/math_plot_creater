@@ -13,6 +13,7 @@ The program contains the following graphs:
 **Sine function** - y=k\*sin(x-a)+b  
 **Cosine function** - y=k\*cos(x-a)+b  
 **QuadraticTrinomial** - y=ax^2+bx+c  
+**Factorial function** - y=!x
 
 ## What is Lib. use?
 
@@ -51,6 +52,9 @@ The program contains the following graphs:
 ### Quadratic Trinomial:
 #### y=ax^2+bx+c
 ![Quadratic Trinomial](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/qt.png)
+### Factorial function:
+#### y=!x
+![Factorial function](https://github.com/NameLessCorporation/math_plot_creater/raw/master/docs/screenshots/fact.png)
 
 ## Programmers:
 [midaef.ru](http://midaef.ru)  

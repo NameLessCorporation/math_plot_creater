@@ -34,7 +34,7 @@ def desc(k, a, b, lang, func_name):
 			label6 = Label(thirdFrame, text = 'The function takes negative values on the interval (-∞; ' + str(x0) + ')\nPositive values on the interval (' + str(x0) + '; +∞)' , bg='#1FA7E1', fg='white')
 		else:
 			label5 = Label(thirdFrame, text = 'The function monotonically decreasing', bg='#1FA7E1', fg='white')
-			label6 = Label(thirdFrame, text = 'The function takes negative values on the interval ' + str(x0) + '; +∞)\nPositive values on the interval (-∞; ' + str(x0) + ')' , bg='#1FA7E1', fg='white')
+			label6 = Label(thirdFrame, text = 'The function takes negative values on the interval (' + str(x0) + '; +∞)\nPositive values on the interval (-∞; ' + str(x0) + ')' , bg='#1FA7E1', fg='white')
 		label7 = Label(thirdFrame, text = 'Function odd' , bg='#1FA7E1', fg='white')
 	else:
 		label1 = Label(thirdFrame, text = 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b), bg='#1FA7E1', fg='white')
@@ -46,7 +46,7 @@ def desc(k, a, b, lang, func_name):
 			label6 = Label(thirdFrame, text = 'Функция принимает отрицательные значения на промежутке (-∞; ' + str(x0) + ')\nПоложительные значения на промежутке (' + str(x0) + '; +∞)' , bg='#1FA7E1', fg='white')
 		else:
 			label5 = Label(thirdFrame, text = 'Функция монотонно убывает', bg='#1FA7E1', fg='white')
-			label6 = Label(thirdFrame, text = 'Функция принимает отрицательные значения на промежутке ' + str(x0) + '; +∞)\nПоложительные значения на промежутке (-∞; ' + str(x0) + ')' , bg='#1FA7E1', fg='white')
+			label6 = Label(thirdFrame, text = 'Функция принимает отрицательные значения на промежутке (' + str(x0) + '; +∞)\nПоложительные значения на промежутке (-∞; ' + str(x0) + ')' , bg='#1FA7E1', fg='white')
 		label7 = Label(thirdFrame, text = 'Функция нечетная' , bg='#1FA7E1', fg='white')
 
 	label1.config(font = ('Arial', 15, 'bold'))

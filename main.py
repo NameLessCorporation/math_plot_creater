@@ -16,6 +16,7 @@ from functions.cos import *
 from functions.cubic import *
 from functions.linear import *
 from functions.square import *
+from functions.factorial import *
 from functions.quadratic import *
 from functions.hyperbola import *
 from functions.quadraticTrinomial import *
@@ -52,8 +53,9 @@ def set_eng():
 		firstFrameElements[6].config(text = 'Sine function')
 		firstFrameElements[7].config(text = 'Cosine function')
 		firstFrameElements[8].config(text = 'Quadratic trinomial')
+		firstFrameElements[9].config(text = 'Factorial function')
 
-		firstFrameElements[9].config(text = 'DRAW FUNCTION')
+		firstFrameElements[10].config(text = 'DRAW FUNCTION')
 
 
 def set_rus():
@@ -74,8 +76,9 @@ def set_rus():
 		firstFrameElements[6].config(text = 'Функция синуса')
 		firstFrameElements[7].config(text = 'Функция косинуса')
 		firstFrameElements[8].config(text = 'Квадратный трёхчлен')
+		firstFrameElements[9].config(text = 'Функция факториал')
 
-		firstFrameElements[9].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
+		firstFrameElements[10].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
 
 
 
@@ -100,6 +103,8 @@ def draw():
 		create_cos(float(k), float(a), float(b))
 	elif v.get() == 8:
 		create_qt(float(k), float(a), float(b), lang)
+	elif v.get() == 9:
+		search_points(int(k), lang)
 
 
 def creat_plot():
@@ -110,8 +115,9 @@ def creat_plot():
 	global b
 
 	k = k.get()
-	a = a.get()
-	b = b.get()
+	if v.get() != 9:
+		a = a.get()
+		b = b.get()
 	secondFrame.destroy()
 	draw()
 	
@@ -147,6 +153,10 @@ def input_arg(v, lang):
 			label3 = Label(secondFrame, text = 'Input c:', bg='#1FA7E1', fg='white')
 
 			b = Entry(secondFrame, width = 20)
+		elif v.get() == 9:
+			label1 = Label(secondFrame, text = 'Input x:', bg='#1FA7E1', fg='white')
+
+			k = Entry(secondFrame, width = 20)
 		else:
 			label1 = Label(secondFrame, text = 'Input k:', bg='#1FA7E1', fg='white')
 
@@ -174,6 +184,10 @@ def input_arg(v, lang):
 			label3 = Label(secondFrame, text = 'Введите c:', bg='#1FA7E1', fg='white')
 
 			b = Entry(secondFrame, width = 20)
+		elif v.get() == 9:
+			label1 = Label(secondFrame, text = 'Введите x:', bg='#1FA7E1', fg='white')
+
+			k = Entry(secondFrame, width = 20)
 		else:
 			label1 = Label(secondFrame, text = 'Введите k:', bg='#1FA7E1', fg='white')
 
@@ -191,25 +205,25 @@ def input_arg(v, lang):
 
 	k.delete(0, END)
 	k.insert(0, '1')
+	if v.get() != 9:
+		a.delete(0, END)
+		a.insert(0, '0')
 
-	a.delete(0, END)
-	a.insert(0, '0')
-
-	b.delete(0, END)
-	b.insert(0, '0')
+		b.delete(0, END)
+		b.insert(0, '0')
 
 	#<--Configs
 	label1.config(font = ('Arial', 15, 'bold'))
 
 	k.config(font = ('Arial', 15, 'bold'))
+	if v.get() != 9:
+		label2.config(font = ('Arial', 15, 'bold'))
 
-	label2.config(font = ('Arial', 15, 'bold'))
+		a.config(font = ('Arial', 15, 'bold'))
 
-	a.config(font = ('Arial', 15, 'bold'))
+		label3.config(font = ('Arial', 15, 'bold'))
 
-	label3.config(font = ('Arial', 15, 'bold'))
-
-	b.config(font = ('Arial', 15, 'bold'))
+		b.config(font = ('Arial', 15, 'bold'))
 
 	button.config(font = ('Arial', 15, 'bold'))
 
@@ -217,14 +231,14 @@ def input_arg(v, lang):
 	label1.grid(column = 0, row = 1)
 
 	k.grid(column = 0, row = 2)
+	if v.get() != 9:
+		label2.grid(column = 0, row = 3)
 
-	label2.grid(column = 0, row = 3)
+		a.grid(column = 0, row = 4)
 
-	a.grid(column = 0, row = 4)
+		label3.grid(column = 0, row = 5)
 
-	label3.grid(column = 0, row = 5)
-
-	b.grid(column = 0, row = 6)
+		b.grid(column = 0, row = 6)
 
 	button.grid(column = 0, columnspan = 7)
 
@@ -260,6 +274,7 @@ def mainFrame():
 	radio6 = Radiobutton(firstFrame, text="Sine function", variable=v, value=6)
 	radio7 = Radiobutton(firstFrame, text="Cosine function", variable=v, value=7)
 	radio8 = Radiobutton(firstFrame, text="Quadratic trinomial", variable=v, value=8)
+	radio9 = Radiobutton(firstFrame, text="Factorial function", variable=v, value=9)
 
 	firstFrameElements.append(radio1)
 	firstFrameElements.append(radio2)
@@ -269,6 +284,7 @@ def mainFrame():
 	firstFrameElements.append(radio6)
 	firstFrameElements.append(radio7)
 	firstFrameElements.append(radio8)
+	firstFrameElements.append(radio9)
 
 	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v, lang))
 
@@ -284,6 +300,7 @@ def mainFrame():
 	radio6.config(bg = '#1FA7E1')
 	radio7.config(bg = '#1FA7E1')
 	radio8.config(bg = '#1FA7E1')
+	radio9.config(bg = '#1FA7E1')
 
 	radio1.select()
 
@@ -299,8 +316,9 @@ def mainFrame():
 	radio6.grid(column = 0, row = 6)
 	radio7.grid(column = 0, row = 7)
 	radio8.grid(column = 0, row = 8)
+	radio9.grid(column = 0, row = 9)
 
-	button.grid(column = 0, row = 9)
+	button.grid(column = 0, row = 10)
 
 	main_menu = Menu(firstFrame)
 	firstFrame.config(menu = main_menu)

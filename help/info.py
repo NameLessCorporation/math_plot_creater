@@ -28,6 +28,7 @@ def info():
 	label7 = Label(fourthFrame, text = 'Sine function - y=k*sin(x-a)+b', bg='#1FA7E1', fg='white')
 	label8 = Label(fourthFrame, text = 'Cosine function - y=k*cos(x-a)+b', bg='#1FA7E1', fg='white')
 	label9 = Label(fourthFrame, text = 'QuadraticTrinomial - y=ax^2+bx+c', bg='#1FA7E1', fg='white')
+	label10 = Label(fourthFrame, text = 'Factorial function - y=!x', bg='#1FA7E1', fg='white')
 
 	#<--Configs
 	label2.config(font = ('Arial', 15, 'bold'))
@@ -38,6 +39,7 @@ def info():
 	label7.config(font = ('Arial', 15, 'bold'))
 	label8.config(font = ('Arial', 15, 'bold'))
 	label9.config(font = ('Arial', 15, 'bold'))
+	label10.config(font = ('Arial', 15, 'bold'))
 
 	#<--Grids
 	label2.grid(column = 0, row = 0)
@@ -48,6 +50,7 @@ def info():
 	label7.grid(column = 0, row = 5)
 	label8.grid(column = 0, row = 6)
 	label9.grid(column = 0, row = 7)
+	label10.grid(column = 0, row = 8)
 
 	#<--Start
 	fourthFrame.mainloop()

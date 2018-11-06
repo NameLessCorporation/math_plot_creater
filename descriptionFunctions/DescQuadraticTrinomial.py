@@ -26,7 +26,23 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 	thirdFrame.config(bg = '#1FA7E1')
 	thirdFrame.iconbitmap('docs/favicon.ico')
 
+	def isOdd():
+		fx1 = a * 5**2 + b * 5 + c
+		fx2 = a * -5**2 + b * -5 + c
+
+		if abs(fx1) == abs(fx2):
+			return True
+		else:
+			return False
+
 	xo = round(xo, 3)
+
+	if isOdd() and lang == 'eng':
+		odd = '\nEven function'
+	elif isOdd() and lang == 'rus':
+		odd = '\nЧетная функция'
+	else:
+		odd = ''
 
 	#<--Elements
 	if lang == 'eng':
@@ -44,14 +60,14 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 			label7 = Label(thirdFrame, text = 'Not exist', bg='#1FA7E1', fg='white')
 		label8 = Label(thirdFrame, text = 'PROPERTIES:', bg='#1FA7E1', fg='white')
 		if a > 0:
-			label9 = Label(thirdFrame, text = '1) D(f)=R or (-∞; +∞)\n2) E(f)=[0; +∞)\n3) Even function\n4)The function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n5) Asymptote has not', bg='#1FA7E1', fg='white')
+			label9 = Label(thirdFrame, text = 'D(f)=R or (-∞; +∞)\nE(f)=[0; +∞)' + odd + '\nThe function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n Asymptote has not', bg='#1FA7E1', fg='white')
 		else:
-			label9 = Label(thirdFrame, text = '1) D(f)=R or (-∞; +∞)\n2) E(f)=(-∞; 0]\n3) Even function\n4)The function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\n5) Asymptote has not', bg='#1FA7E1', fg='white')
+			label9 = Label(thirdFrame, text = 'D(f)=R or (-∞; +∞)\nE(f)=(-∞; 0]' + odd + '\nThe function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\nAsymptote has not', bg='#1FA7E1', fg='white')
 		if a > 0:
-			label10 = Label(thirdFrame, text = '6) Min value of x: not exist' + '\n   Min value of y: ' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
+			label10 = Label(thirdFrame, text = 'Min value of x: not exist' + '\n   Min value of y: ' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
 			label11 = Label(thirdFrame, text = '   Max value of x: not exist' + '\n   Max value of y: not exist', bg='#1FA7E1', fg='white')
 		else:
-			label10 = Label(thirdFrame, text = '6) Min value of x: not exist' + '\n   Min value of y: not exist', bg='#1FA7E1', fg='white')
+			label10 = Label(thirdFrame, text = 'Min value of x: not exist' + '\n   Min value of y: not exist', bg='#1FA7E1', fg='white')
 			label11 = Label(thirdFrame, text = '   Max value of x: not exist' + '\n   Max value of y: ' + str(round(max(y_list), 5)), bg='#1FA7E1', fg='white')
 	else:
 		label1 = Label(thirdFrame, text = 'Ваши аргументы:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c), bg='#1FA7E1', fg='white')
@@ -68,14 +84,14 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 			label7 = Label(thirdFrame, text = 'Не существует', bg='#1FA7E1', fg='white')
 		label8 = Label(thirdFrame, text = 'СВОЙСТВА:', bg='#1FA7E1', fg='white')
 		if a > 0:
-			label9 = Label(thirdFrame, text = '1) D(f)=R or (-∞; +∞)\n2) E(f)=[0; +∞)\n3) Четная функция\n4)Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция уменьшается в интервале (' + str(xo) + '; +∞)\n5) Нет асимптоты', bg='#1FA7E1', fg='white')
+			label9 = Label(thirdFrame, text = ' D(f)=R or (-∞; +∞)\n2) E(f)=[0; +∞)' + odd + '\nФункция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция уменьшается в интервале (' + str(xo) + '; +∞)\nНет асимптоты', bg='#1FA7E1', fg='white')
 		else:
-			label9 = Label(thirdFrame, text = '1) D(f)=R or (-∞; +∞)\n2) E(f)=(-∞; 0]\n3) Четная функция\n4)Функция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n5) Нет асимптоты', bg='#1FA7E1', fg='white')
+			label9 = Label(thirdFrame, text = ' D(f)=R or (-∞; +∞)\n2) E(f)=(-∞; 0]' + odd + '\nФункция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция уменьшается в интервале (-∞; ' + str(xo) + ')\nНет асимптоты', bg='#1FA7E1', fg='white')
 		if a > 0:
-			label10 = Label(thirdFrame, text = '6) Мин. значение X: не существует' + '\n   Мин. значение Y:' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
+			label10 = Label(thirdFrame, text = ' Мин. значение X: не существует' + '\n   Мин. значение Y:' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
 			label11 = Label(thirdFrame, text = '   Макс. значение X: не существует' + '\n   Макс. значение Y: не существует', bg='#1FA7E1', fg='white')
 		else:
-			label10 = Label(thirdFrame, text = '6) Мин. значение X: не существует' + '\n   Мин. значение Y: не существует', bg='#1FA7E1', fg='white')
+			label10 = Label(thirdFrame, text = ' Мин. значение X: не существует' + '\n   Мин. значение Y: не существует', bg='#1FA7E1', fg='white')
 			label11 = Label(thirdFrame, text = '   Макс. значение X: не существует' + '\n   Макс. значение Y: ' + str(round(max(y_list), 5)), bg='#1FA7E1', fg='white')
 
 	

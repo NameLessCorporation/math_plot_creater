@@ -16,6 +16,8 @@ from functions.quadraticTrinomial import *
 def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang, func_name):
 	global thirdFrame
 
+	infoString = ''
+
 	#<--Settings for secondFrame
 	thirdFrame = Tk()
 
@@ -46,80 +48,76 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 
 	#<--Elements
 	if lang == 'eng':
-		label1 = Label(thirdFrame, text = 'Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c), bg='#1FA7E1', fg='white')
-		label2 = Label(thirdFrame, text = 'Discriminant: ' + str(D), bg='#1FA7E1', fg='white')
-		label3 = Label(thirdFrame, text = 'TOPS FUNC.', bg='#1FA7E1', fg='white')
-		label4 = Label(thirdFrame, text = 'x tops: ' + str(xo), bg='#1FA7E1', fg='white')
-		label5 = Label(thirdFrame, text = 'y tops: ' + str(yo), bg='#1FA7E1', fg='white')
-		label6 = Label(thirdFrame, text = 'NULL FUNC.', bg='#1FA7E1', fg='white')
+		infoString = 'Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n' + 'Discriminant: ' + str(D) + '\n' + 'TOPS FUNC.\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nNULL FUNC.\n'
 		if D == 0:
-			label7 = Label(thirdFrame, text = 'x: ' + str(x_null_0), bg='#1FA7E1', fg='white')
+			infoString += 'x: ' + str(x_null_0) + '\n'
 		elif D > 0:
-			label7 = Label(thirdFrame, text = 'x1: ' + str(x_null_1) + '\n' + 'x2: ' + str(x_null_2), bg='#1FA7E1', fg='white')
+			infoString += 'x1: ' + str(x_null_1) + '\n' + 'x2: ' + str(x_null_2) + '\n'
 		else:
-			label7 = Label(thirdFrame, text = 'Not exist', bg='#1FA7E1', fg='white')
-		label8 = Label(thirdFrame, text = 'PROPERTIES:', bg='#1FA7E1', fg='white')
+			infoString += 'Not exist\n'
+		infoString += 'PROPERTIES:\n'
 		if a > 0:
-			label9 = Label(thirdFrame, text = 'D(f)=R or (-∞; +∞)\nE(f)=[0; +∞)' + odd + '\nThe function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n Asymptote has not', bg='#1FA7E1', fg='white')
+			infoString += '1) D(f)=R or (-∞; +∞)\n'
+			infoString += '2) E(f)=[0; +∞)\n'
+			if b == 0:
+				infoString += '3) Even function\n'
+			else:
+				infoString += '3) General view function\n'
+			infoString += '4)The function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n'
+			infoString += '5) Asymptote has not\n'
 		else:
-			label9 = Label(thirdFrame, text = 'D(f)=R or (-∞; +∞)\nE(f)=(-∞; 0]' + odd + '\nThe function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\nAsymptote has not', bg='#1FA7E1', fg='white')
+			infoString += '1) D(f)=R or (-∞; +∞)\n'
+			infoString += '2) E(f)=(-∞; 0]\n'
+			if b == 0:
+				infoString += '3) Even function\n'
+			else:
+				infoString += '3) General view function\n'
+			infoString += '4)The function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\n'
+			infoString += '5) Asymptote has not\n'
 		if a > 0:
-			label10 = Label(thirdFrame, text = 'Min value of x: not exist' + '\n   Min value of y: ' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
-			label11 = Label(thirdFrame, text = '   Max value of x: not exist' + '\n   Max value of y: not exist', bg='#1FA7E1', fg='white')
+			infoString += '6) Min value of x: not exist' + '\n   Min value of y: ' + str(round(min(y_list), 5)) + '\n'
+			infoString += '   Max value of x: not exist' + '\n   Max value of y: not exist'
 		else:
-			label10 = Label(thirdFrame, text = 'Min value of x: not exist' + '\n   Min value of y: not exist', bg='#1FA7E1', fg='white')
-			label11 = Label(thirdFrame, text = '   Max value of x: not exist' + '\n   Max value of y: ' + str(round(max(y_list), 5)), bg='#1FA7E1', fg='white')
+			infoString += '6) Min value of x: not exist' + '\n   Min value of y: not exist\n'
+			infoString += '   Max value of x: not exist' + '\n   Max value of y: ' + str(round(max(y_list), 5))
 	else:
-		label1 = Label(thirdFrame, text = 'Ваши аргументы:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c), bg='#1FA7E1', fg='white')
-		label2 = Label(thirdFrame, text = 'Дискриминант: ' + str(D), bg='#1FA7E1', fg='white')
-		label3 = Label(thirdFrame, text = 'Вершина функции:', bg='#1FA7E1', fg='white')
-		label4 = Label(thirdFrame, text = 'x: ' + str(xo), bg='#1FA7E1', fg='white')
-		label5 = Label(thirdFrame, text = 'y: ' + str(yo), bg='#1FA7E1', fg='white')
-		label6 = Label(thirdFrame, text = 'Нули функции:', bg='#1FA7E1', fg='white')
+		infoString = 'Ваши аргументы:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n' + 'Дискриминант: ' + str(D) + '\n' + 'Вершина функции:\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nНули функции:\n'
 		if D == 0:
-			label7 = Label(thirdFrame, text = 'x: ' + str(x_null_0), bg='#1FA7E1', fg='white')
+			infoString += 'x: ' + str(x_null_0) + '\n'
 		elif D > 0:
-			label7 = Label(thirdFrame, text = 'x1: ' + str(x_null_1) + '\n' + 'x2: ' + str(x_null_2), bg='#1FA7E1', fg='white')
+			infoString += 'x1: ' + str(x_null_1) + '\n' + 'x2: ' + str(x_null_2) + '\n'
 		else:
-			label7 = Label(thirdFrame, text = 'Не существует', bg='#1FA7E1', fg='white')
-		label8 = Label(thirdFrame, text = 'СВОЙСТВА:', bg='#1FA7E1', fg='white')
+			infoString += 'Не существует\n'
+		infoString += 'СВОЙСТВА:\n'
 		if a > 0:
-			label9 = Label(thirdFrame, text = ' D(f)=R or (-∞; +∞)\n2) E(f)=[0; +∞)' + odd + '\nФункция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция уменьшается в интервале (' + str(xo) + '; +∞)\nНет асимптоты', bg='#1FA7E1', fg='white')
+			infoString += '1) D(f)=R or (-∞; +∞)\n'
+			infoString += '2) E(f)=[0; +∞)\n'
+			if b == 0:
+				infoString += '3) Четная функция\n'
+			else:
+				infoString += '3) Функция общего вида\n'
+			infoString += '4)Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция увеличивается в интервале (' + str(xo) + '; +∞)'
+			infoString += '5) Нет асимптоты\n'
 		else:
-			label9 = Label(thirdFrame, text = ' D(f)=R or (-∞; +∞)\n2) E(f)=(-∞; 0]' + odd + '\nФункция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция уменьшается в интервале (-∞; ' + str(xo) + ')\nНет асимптоты', bg='#1FA7E1', fg='white')
+			infoString += '1) D(f)=R or (-∞; +∞)\n'
+			infoString += '2) E(f)=(-∞; 0]\n'
+			if b == 0:
+				infoString += '3) Четная функция\n'
+			else:
+				infoString += '3) Функция общего вида\n'
+			infoString += '4)Функция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция увеличивается в интервале (-∞; ' + str(xo) + ')\n'
+			infoString += '5) Нет асимптоты\n'
 		if a > 0:
-			label10 = Label(thirdFrame, text = ' Мин. значение X: не существует' + '\n   Мин. значение Y:' + str(round(min(y_list), 5)), bg='#1FA7E1', fg='white')
-			label11 = Label(thirdFrame, text = '   Макс. значение X: не существует' + '\n   Макс. значение Y: не существует', bg='#1FA7E1', fg='white')
+			infoString += '6) Мин. значение X: не существует' + '\n   Мин. значение Y:' + str(round(min(y_list), 5)) + '\n'
+			infoString += '   Макс. значение X: не существует' + '\n   Макс. значение Y: не существует'
 		else:
-			label10 = Label(thirdFrame, text = ' Мин. значение X: не существует' + '\n   Мин. значение Y: не существует', bg='#1FA7E1', fg='white')
-			label11 = Label(thirdFrame, text = '   Макс. значение X: не существует' + '\n   Макс. значение Y: ' + str(round(max(y_list), 5)), bg='#1FA7E1', fg='white')
+			infoString += '6) Мин. значение X: не существует' + '\n   Мин. значение Y: не существует'
+			infoString += '   Макс. значение X: не существует' + '\n   Макс. значение Y: ' + str(round(max(y_list), 5))
 
-	
-	#<--Configs
-	label1.config(font = ('Arial', 15, 'bold'))
-	label2.config(font = ('Arial', 15, 'bold'))
-	label3.config(font = ('Arial', 15, 'bold'))
-	label4.config(font = ('Arial', 15, 'bold'))
-	label5.config(font = ('Arial', 15, 'bold'))
-	label6.config(font = ('Arial', 15, 'bold'))
-	label7.config(font = ('Arial', 15, 'bold'))
-	label8.config(font = ('Arial', 15, 'bold'))
-	label9.config(font = ('Arial', 15, 'bold'))
-	label10.config(font = ('Arial', 15, 'bold'))
-	label11.config(font = ('Arial', 15, 'bold'))
+	label = Label(thirdFrame, text = infoString)
+	label.config(font = ('Arial', 15, 'bold'), bg='#1FA7E1', fg='white')
+	label.pack()
 
-	#<--Grids
-	label1.grid(column = 0, row = 0)
-	label2.grid(column = 0, row = 1)
-	label3.grid(column = 0, row = 2)
-	label4.grid(column = 0, row = 3)
-	label5.grid(column = 0, row = 4)
-	label6.grid(column = 0, row = 5)
-	label7.grid(column = 0, row = 6)
-	label8.grid(column = 0, row = 7)
-	label9.grid(column = 0, row = 8)
-	label10.grid(column = 0, row = 9)
-	label11.grid(column = 0, row = 10)
 
 	#<--Start
 	thirdFrame.mainloop()

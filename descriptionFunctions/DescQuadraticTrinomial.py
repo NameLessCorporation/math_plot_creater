@@ -58,21 +58,21 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 		infoString += 'PROPERTIES:\n'
 		if a > 0:
 			infoString += '1) D(f)=R or (-∞; +∞)\n'
-			infoString += '2) E(f)=[0; +∞)\n'
+			infoString += '2) E(f)=[' + str(round(min(y_list), 3)) + '; +∞)\n'
 			if b == 0:
 				infoString += '3) Even function\n'
 			else:
 				infoString += '3) General view function\n'
-			infoString += '4)The function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n'
+			infoString += '4) The function decreases in the interval (-∞; ' + str(xo) + ')\n  The function increases in the interval (' + str(xo) + '; +∞)\n'
 			infoString += '5) Asymptote has not\n'
 		else:
 			infoString += '1) D(f)=R or (-∞; +∞)\n'
-			infoString += '2) E(f)=(-∞; 0]\n'
+			infoString += '2) E(f)=(-∞; ' + str(round(max(y_list), 3)) + ']\n'
 			if b == 0:
 				infoString += '3) Even function\n'
 			else:
 				infoString += '3) General view function\n'
-			infoString += '4)The function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\n'
+			infoString += '4) The function decreases in the interval (' + str(xo) + '; +∞)\n  The function increases in the interval (-∞; ' + str(xo) + ')\n'
 			infoString += '5) Asymptote has not\n'
 		if a > 0:
 			infoString += '6) Min value of x: not exist' + '\n   Min value of y: ' + str(round(min(y_list), 5)) + '\n'
@@ -91,21 +91,21 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 		infoString += 'СВОЙСТВА:\n'
 		if a > 0:
 			infoString += '1) D(f)=R or (-∞; +∞)\n'
-			infoString += '2) E(f)=[0; +∞)\n'
+			infoString += '2) E(f)=[' + str(round(min(y_list), 3)) + '; +∞)\n'
 			if b == 0:
 				infoString += '3) Четная функция\n'
 			else:
 				infoString += '3) Функция общего вида\n'
-			infoString += '4)Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция увеличивается в интервале (' + str(xo) + '; +∞)'
+			infoString += '4) Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция увеличивается в интервале (' + str(xo) + '; +∞)'
 			infoString += '5) Нет асимптоты\n'
 		else:
 			infoString += '1) D(f)=R or (-∞; +∞)\n'
-			infoString += '2) E(f)=(-∞; 0]\n'
+			infoString += '2) E(f)=(-∞; ' + str(round(max(y_list), 3)) + ']\n'
 			if b == 0:
 				infoString += '3) Четная функция\n'
 			else:
 				infoString += '3) Функция общего вида\n'
-			infoString += '4)Функция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция увеличивается в интервале (-∞; ' + str(xo) + ')\n'
+			infoString += '4)Ф ункция уменьшается в интервале (' + str(xo) + '; +∞)\n  Функция увеличивается в интервале (-∞; ' + str(xo) + ')\n'
 			infoString += '5) Нет асимптоты\n'
 		if a > 0:
 			infoString += '6) Мин. значение X: не существует' + '\n   Мин. значение Y:' + str(round(min(y_list), 5)) + '\n'

@@ -17,7 +17,7 @@ def create_cos(k, a, b):
 	x_points = np.arange(-10.0, 10.0, 0.1)
 	new_x  = []
 	for i in range(len(x_points)):
-		new_x.append(x_points[i] - a)
+		new_x.append(x_points[i] + a)
 		y = k * (math.cos(x_points[i])) + b
 		y_points.append(y)
 	x_points = new_x

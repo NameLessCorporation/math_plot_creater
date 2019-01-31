@@ -16,7 +16,7 @@ def create_linear(k, a, b, lang):
 	y_points = []
 
 	for x in range(-10, 11):
-		x_points.append(x - a)
+		x_points.append(x + a)
 		y = k * x + b
 		y_points.append(y)
 

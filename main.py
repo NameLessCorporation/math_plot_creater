@@ -95,9 +95,9 @@ def draw():
 	elif v.get() == 2:
 		create_quadratic(float(k), float(a), float(b))
 	elif v.get() == 3:
-		create_cubic(float(k), float(a), float(b))
+		create_cubic(float(k), float(a), float(b), lang)
 	elif v.get() == 4:
-		create_hyperbola(float(k), float(a), float(b))
+		create_hyperbola(float(k), float(a), float(b), lang)
 	elif v.get() == 5:
 		create_square(float(k), float(a), float(b))
 	elif v.get() == 6:

@@ -9,14 +9,15 @@ import numpy as np
 from ezprint import *
 from tkinter import *
 import matplotlib.pyplot as plt
+from descriptionFunctions.DescHyperbola import *
 
 
-def create_hyperbola(k, a, b):
+def create_hyperbola(k, a, b, lang):
 	x_points = []
 	y_points = []
 
 	x_points = np.around(np.arange(-10, 10, 0.1), decimals=4)
-	y_points = (k / x_points - a) + b
+	y_points = (k / (x_points - a)) + b
 
 	func_name = 'y = '
 
@@ -46,4 +47,11 @@ def create_hyperbola(k, a, b):
 
 	plt.title(func_name)
 	plt.axis('equal')
+
+	try:
+		start_frame = threading.Thread(target= lambda : main_frame(k, a, b, x_points, y_points, lang, func_name))
+		start_frame.start()
+	except:
+		pass
+
 	plt.show()

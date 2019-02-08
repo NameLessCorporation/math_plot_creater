@@ -99,7 +99,7 @@ def draw():
 	elif v.get() == 4:
 		create_hyperbola(float(k), float(a), float(b), lang)
 	elif v.get() == 5:
-		create_square(float(k), float(a), float(b))
+		create_square(float(k), float(a), float(b), lang)
 	elif v.get() == 6:
 		create_sin(float(k), float(a), float(b))
 	elif v.get() == 7:

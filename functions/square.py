@@ -8,9 +8,10 @@ import numpy as np
 from ezprint import *
 from tkinter import *
 import matplotlib.pyplot as plt
+from descriptionFunctions.DescSquare import *
 
 
-def create_square(k, a, b):
+def create_square(k, a, b, lang):
 	x_points = []
 	y_points = []
 
@@ -50,6 +51,13 @@ def create_square(k, a, b):
 
 	plt.title(func_name)
 	plt.axis('equal')
+
+	try:
+		start_frame = threading.Thread(target= lambda : main_frame(k, a, b, x_points, y_points, lang, func_name))
+		start_frame.start()
+	except:
+		pass
+	
 	plt.show()
 
 

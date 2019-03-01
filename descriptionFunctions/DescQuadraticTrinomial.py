@@ -48,7 +48,12 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 
 	#<--Elements
 	if lang == 'eng':
-		infoString = 'Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n' + 'Discriminant: ' + str(D) + '\n' + 'TOPS FUNC.\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nNULL FUNC.\n'
+		infoString = 'Your args:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n'
+		if D >= 0:
+			infoString += 'Discriminant: ' + str(D) + '\n'
+		else:
+			infoString += 'Discriminant: ' + str(D) + ' < 0' + '\n'
+		infoString += 'TOPS FUNC.\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nNULL FUNC.\n'
 		if D == 0:
 			infoString += 'x: ' + str(x_null_0) + '\n'
 		elif D > 0:
@@ -81,7 +86,12 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 			infoString += '6) Min value of x: not exist' + '\n   Min value of y: not exist\n'
 			infoString += '   Max value of x: not exist' + '\n   Max value of y: ' + str(round(max(y_list), 5))
 	else:
-		infoString = 'Ваши аргументы:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n' + 'Дискриминант: ' + str(D) + '\n' + 'Вершина функции:\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nНули функции:\n'
+		infoString = 'Ваши аргументы:\na= ' + str(a) + '\nb= ' + str(b) + '\nc= ' + str(c) + '\n'
+		if D >= 0:
+			infoString += 'Дискриминант: ' + str(D) + '\n'
+		else:
+			infoString += 'Дискриминант: ' + str(D) + ' < 0' + '\n'
+		infoString += 'Вершина функции:\n' + 'x tops: ' + str(xo) + '\ny tops: ' + str(yo) + '\nНули функции:\n'
 		if D == 0:
 			infoString += 'x: ' + str(x_null_0) + '\n'
 		elif D > 0:

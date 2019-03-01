@@ -36,11 +36,11 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 		infoString += 'PROPERTIES:\n'
 
 		if k > 0:
-			infoString += '1) D(f)=(' + str(a) + '; ∞)\n'
-			infoString += '2) E(f)=(' + str(b) + '; ∞)\n'
+			infoString += '1) D(f)=[' + str(a) + '; ∞)\n'
+			infoString += '2) E(f)=[' + str(b) + '; ∞)\n'
 		else:
-			infoString += '1) D(f)=(-∞; ' + str (a) + ')\n'
-			infoString += '2) E(f)=(-∞; ' + str (b) + ')\n'
+			infoString += '1) D(f)=(-∞; ' + str (a) + ']\n'
+			infoString += '2) E(f)=(-∞; ' + str (b) + ']\n'
 
 		infoString += 'x0 = ' + str(x0) + '\n'
 		infoString += 'General view function\nNon-periodic function\n'
@@ -52,15 +52,15 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 			infoString += 'The function decreases monotonically on the domain of definition.\n'
 			infoString += 'Y min not exist   ' + ' Y max = ' + str(min(y_list))
 	else:
-		infoString = 'Ваши аргументы::\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
+		infoString = 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
 		infoString += 'СВОЙСТВА:\n'
 
 		if k > 0:
-			infoString += '1) D(f)=(' + str(a) + '; ∞)\n'
-			infoString += '2) E(f)=(' + str(b) + '; ∞)\n'
+			infoString += '1) D(f)=[' + str(a) + '; ∞)\n'
+			infoString += '2) E(f)=[' + str(b) + '; ∞)\n'
 		else:
-			infoString += '1) D(f)=(-∞; ' + str (a) + ')\n'
-			infoString += '2) E(f)=(-∞; ' + str (b) + ')\n'
+			infoString += '1) D(f)=(-∞; ' + str (a) + ']\n'
+			infoString += '2) E(f)=(-∞; ' + str (b) + ']\n'
 
 		infoString += 'x0 = ' + str(x0) + '\n'
 		infoString += 'Функция общего вида\nФункция непериодическая\n'

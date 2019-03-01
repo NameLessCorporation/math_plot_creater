@@ -32,6 +32,10 @@ k = None
 a = None
 b = None
 c = None
+nk = None
+na = None
+nb = None
+nc = None
 
 lang = 'eng'
 
@@ -84,32 +88,31 @@ def set_rus():
 		firstFrameElements[11].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
 
 
-
 def draw():
-	global k
-	global a
-	global b
+	global nk
+	global na
+	global nb
 
 	if v.get() == 1:
-		create_linear(float(k), float(a), float(b), lang)
+		create_linear(float(nk), float(na), float(nb), lang)
 	elif v.get() == 2:
-		create_quadratic(float(k), float(a), float(b))
+		create_quadratic(float(nk), float(na), float(nb))
 	elif v.get() == 3:
-		create_cubic(float(k), float(a), float(b), lang)
+		create_cubic(float(nk), float(na), float(nb), lang)
 	elif v.get() == 4:
-		create_hyperbola(float(k), float(a), float(b), lang)
+		create_hyperbola(float(nk), float(na), float(nb), lang)
 	elif v.get() == 5:
-		create_square(float(k), float(a), float(b), lang)
+		create_square(float(nk), float(na), float(nb), lang)
 	elif v.get() == 6:
-		create_sin(float(k), float(a), float(b))
+		create_sin(float(nk), float(na), float(nb))
 	elif v.get() == 7:
-		create_cos(float(k), float(a), float(b))
+		create_cos(float(nk), float(na), float(nb))
 	elif v.get() == 8:
-		create_qt(float(k), float(a), float(b), lang)
+		create_qt(float(nk), float(na), float(nb), lang)
 	elif v.get() == 9:
-		search_points(int(k), lang)
+		search_points(int(nk), lang)
 	elif v.get() == 10:
-		create_linear_with_module(float(k), float(a), float(b), lang)
+		create_linear_with_module(float(nk), float(na), float(nb), lang)
 
 
 def creat_plot():
@@ -118,13 +121,17 @@ def creat_plot():
 	global k
 	global a
 	global b
+	global nk
+	global na
+	global nb
 
-	k = k.get()
+	nk = k.get()
 	if v.get() != 9:
-		a = a.get()
-		b = b.get()
-	secondFrame.destroy()
-	draw()
+		na = a.get()
+		nb = b.get()
+	if float(nk) != 0:
+		secondFrame.destroy()
+		draw()
 	
 
 def input_arg(v, lang):

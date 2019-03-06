@@ -85,7 +85,7 @@ def set_rus():
 		firstFrameElements[9].config(text = 'Функция факториал')
 		firstFrameElements[10].config(text = '|Линейная| функция')
 
-		firstFrameElements[11].config(text = 'НАЧЕРТИТЬ ФУНКЦИЮ')
+		firstFrameElements[11].config(text = 'НАЧЕРТИТЬ ГРАФИК')
 
 
 def draw():
@@ -307,6 +307,7 @@ def mainFrame():
 	firstFrameElements.append(radio10)
 
 	button = Button(firstFrame, text = 'DRAW FUNCTION', command = lambda: input_arg(v, lang))
+	NLlabel = Label(firstFrame, text = 'NameLess Corporation')
 
 	firstFrameElements.append(button)
 	#<--Configs
@@ -325,22 +326,24 @@ def mainFrame():
 
 	radio1.select()
 
-	button.config(font = ('Arial', 15, 'bold'))
+	button.config(font = ('Arial', 12, 'bold'))
+	NLlabel.config(font = ('Arial', 10, 'bold'), bg = bg, fg = fg)
 	#<--Grids
 	label.grid(column = 0, row = 0)
 
-	radio1.grid(column = 0, row = 1)
-	radio2.grid(column = 0, row = 2)
-	radio3.grid(column = 0, row = 3)
-	radio4.grid(column = 0, row = 4)
-	radio5.grid(column = 0, row = 5)
-	radio6.grid(column = 0, row = 6)
-	radio7.grid(column = 0, row = 7)
-	radio8.grid(column = 0, row = 8)
-	radio9.grid(column = 0, row = 9)
-	radio10.grid(column = 0, row = 10)
+	radio1.grid(column = 0, row = 1, sticky = W, padx=30)
+	radio2.grid(column = 0, row = 2, sticky = W, padx=30)
+	radio3.grid(column = 0, row = 3, sticky = W, padx=30)
+	radio4.grid(column = 0, row = 4, sticky = W, padx=30)
+	radio5.grid(column = 0, row = 5, sticky = W, padx=30)
+	radio6.grid(column = 0, row = 6, sticky = W, padx=30)
+	radio7.grid(column = 0, row = 7, sticky = W, padx=30)
+	radio8.grid(column = 0, row = 8, sticky = W, padx=30)
+	radio9.grid(column = 0, row = 9, sticky = W, padx=30)
+	radio10.grid(column = 0, row = 10, sticky = W, padx=30)
 
 	button.grid(column = 0, row = 11)
+	NLlabel.grid(column = 0, row = 12)
 
 	main_menu = Menu(firstFrame)
 	firstFrame.config(menu = main_menu)

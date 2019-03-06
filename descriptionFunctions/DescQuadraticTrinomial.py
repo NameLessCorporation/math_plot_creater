@@ -13,6 +13,10 @@ from tkinter import *
 from functions.quadraticTrinomial import *
 
 
+bg = '#10355B'
+fg = '#DDDFD2'
+
+
 def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list, lang, func_name):
 	global thirdFrame
 
@@ -106,7 +110,7 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 				infoString += '3) Четная функция\n'
 			else:
 				infoString += '3) Функция общего вида\n'
-			infoString += '4) Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция увеличивается в интервале (' + str(xo) + '; +∞)'
+			infoString += '4) Функция уменьшается в интервале (-∞; ' + str(xo) + ')\n  Функция увеличивается в интервале (' + str(xo) + '; +∞)\n'
 			infoString += '5) Нет асимптоты\n'
 		else:
 			infoString += '1) D(f)=R or (-∞; +∞)\n'
@@ -125,7 +129,7 @@ def main_frame(a, b, c, D, xo, yo, x_null_0, x_null_1, x_null_2, x_list, y_list,
 			infoString += '   Макс. значение X: не существует' + '\n   Макс. значение Y: ' + str(round(max(y_list), 5))
 
 	label = Label(thirdFrame, text = infoString)
-	label.config(font = ('Arial', 15, 'bold'), bg='#1FA7E1', fg='white')
+	label.config(font = ('Arial', 15, 'bold'), bg=bg, fg=fg)
 	label.pack()
 
 

@@ -12,6 +12,11 @@ from ezprint import *
 from tkinter import *
 
 
+bg = '#10355B'
+fg = '#DDDFD2'
+
+
+
 def desc(k, a, b, lang, func_name):
 	thirdFrame = Tk()
 
@@ -90,7 +95,7 @@ def desc(k, a, b, lang, func_name):
 
 	infoString += odd
 	label = Label(thirdFrame, text = infoString, bg='#1FA7E1', fg='white')
-	label.config(font = ('Arial', 15, 'bold'))
+	label.config(font = ('Arial', 15, 'bold'), bg=bg, fg=fg)
 	label.pack()
 	# label2.config(font = ('Arial', 15, 'bold'))
 	# label3.config(font = ('Arial', 15, 'bold'))

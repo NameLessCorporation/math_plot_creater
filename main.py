@@ -140,6 +140,9 @@ def input_arg(v, lang):
 	global k
 	global a
 	global b
+
+	bg = '#10355B'
+	fg = '#DDDFD2'
 	#<--Settings for secondFrame
 	firstFrame.destroy()
 	secondFrame = Tk()
@@ -148,68 +151,68 @@ def input_arg(v, lang):
 
 	secondFrame.resizable(0, 0)
 
-	secondFrame.config(bg = '#1FA7E1')
+	secondFrame.config(bg = bg)
 	secondFrame.iconbitmap('docs/favicon.ico')
 	
 	#<--Elements
 	if lang == 'eng':
 		if v.get() == 8:
-			label1 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Input a:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 
-			label2 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Input b:', bg=bg, fg=fg)
 
 			a = Entry(secondFrame, width = 20)
 
-			label3 = Label(secondFrame, text = 'Input c:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Input c:', bg=bg, fg=fg)
 
 			b = Entry(secondFrame, width = 20)
 		elif v.get() == 9:
-			label1 = Label(secondFrame, text = 'Input x:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Input x:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 		else:
-			label1 = Label(secondFrame, text = 'Input k:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Input k:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 
-			label2 = Label(secondFrame, text = 'Input a:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Input a:', bg=bg, fg=fg)
 
 			a = Entry(secondFrame, width = 20)
 
-			label3 = Label(secondFrame, text = 'Input b:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Input b:', bg=bg, fg=fg)
 
 			b = Entry(secondFrame, width = 20)
 
 		button = Button(secondFrame, text = 'DRAW', command = creat_plot)
 	else:
 		if v.get() == 8:
-			label1 = Label(secondFrame, text = 'Введите a:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Введите a:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 
-			label2 = Label(secondFrame, text = 'Введите b:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Введите b:', bg=bg, fg=fg)
 
 			a = Entry(secondFrame, width = 20)
 
-			label3 = Label(secondFrame, text = 'Введите c:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Введите c:', bg=bg, fg=fg)
 
 			b = Entry(secondFrame, width = 20)
 		elif v.get() == 9:
-			label1 = Label(secondFrame, text = 'Введите x:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Введите x:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 		else:
-			label1 = Label(secondFrame, text = 'Введите k:', bg='#1FA7E1', fg='white')
+			label1 = Label(secondFrame, text = 'Введите k:', bg=bg, fg=fg)
 
 			k = Entry(secondFrame, width = 20)
 
-			label2 = Label(secondFrame, text = 'Введите a:', bg='#1FA7E1', fg='white')
+			label2 = Label(secondFrame, text = 'Введите a:', bg=bg, fg=fg)
 
 			a = Entry(secondFrame, width = 20)
 
-			label3 = Label(secondFrame, text = 'Введите b:', bg='#1FA7E1', fg='white')
+			label3 = Label(secondFrame, text = 'Введите b:', bg=bg, fg=fg)
 
 			b = Entry(secondFrame, width = 20)
 
@@ -269,13 +272,16 @@ def mainFrame():
 
 	firstFrame.resizable(0, 0)
 
-	firstFrame.config(bg = '#1FA7E1')
+	bg = '#10355B'
+	fg = '#DDDFD2'
+
+	firstFrame.config(bg = bg)
 
 	firstFrame.iconbitmap('docs/favicon.ico')
 
 	v = IntVar()
 	#<--Elements
-	label = Label(firstFrame, text = 'CHOOSE PLOT:', bg='#1FA7E1', fg='white')
+	label = Label(firstFrame, text = 'CHOOSE PLOT:', bg=bg, fg=fg)
 	firstFrameElements.append(label)
 
 	radio1 = Radiobutton(firstFrame, text="Linear function", variable=v, value=1)
@@ -306,16 +312,16 @@ def mainFrame():
 	#<--Configs
 	label.config(font = ('Arial', 15, 'bold'))
 
-	radio1.config(bg = '#1FA7E1')
-	radio2.config(bg = '#1FA7E1')
-	radio3.config(bg = '#1FA7E1')
-	radio4.config(bg = '#1FA7E1')
-	radio5.config(bg = '#1FA7E1')
-	radio6.config(bg = '#1FA7E1')
-	radio7.config(bg = '#1FA7E1')
-	radio8.config(bg = '#1FA7E1')
-	radio9.config(bg = '#1FA7E1')
-	radio10.config(bg = '#1FA7E1')
+	radio1.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio2.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio3.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio4.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio5.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio6.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio7.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio8.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio9.config(bg = bg, fg = fg, selectcolor = 'black')
+	radio10.config(bg = bg, fg = fg, selectcolor = 'black')
 
 	radio1.select()
 
@@ -346,7 +352,7 @@ def mainFrame():
 
 	lang_menu.add_command(label="English", command = set_eng)
 	lang_menu.add_command(label="Russian", command = set_rus)
-	info_menu.add_command(label="Help", command = info)
+	info_menu.add_command(label="Help", command = lambda: info(lang))
 	info_menu.add_command(label="Authors", command = authors)
 	#<--Start
 	firstFrame.mainloop()

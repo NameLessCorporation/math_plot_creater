@@ -7,8 +7,10 @@ import matplotlib.pyplot as plt
 from ezprint import *
 from tkinter import *
 
+bg = '#10355B'
+fg = '#DDDFD2'
 
-def info():
+def info(lang):
 	#<--Settings for secondFrame
 	fourthFrame = Tk()
 
@@ -16,20 +18,34 @@ def info():
 
 	fourthFrame.resizable(0, 0)
 
-	fourthFrame.config(bg = '#1FA7E1')
+	fourthFrame.config(bg = bg)
 	fourthFrame.iconbitmap('docs/favicon.ico')
 
+	# print(lang)
+
 	#<--Elements
-	label2 = Label(fourthFrame, text = 'Linear function - y=k*(x-a)+b', bg='#1FA7E1', fg='white')
-	label3 = Label(fourthFrame, text = 'Quadratic function - y=k*(x-a)^2+b', bg='#1FA7E1', fg='white')
-	label4 = Label(fourthFrame, text = 'Square function - y=k*sqrt(x-a)+b', bg='#1FA7E1', fg='white')
-	label5 = Label(fourthFrame, text = 'Cubic function - y=k*(x-a)^3+b', bg='#1FA7E1', fg='white')
-	label6 = Label(fourthFrame, text = 'Hyperbola function - y=k/(x-a)+b', bg='#1FA7E1', fg='white')
-	label7 = Label(fourthFrame, text = 'Sine function - y=k*sin(x-a)+b', bg='#1FA7E1', fg='white')
-	label8 = Label(fourthFrame, text = 'Cosine function - y=k*cos(x-a)+b', bg='#1FA7E1', fg='white')
-	label9 = Label(fourthFrame, text = 'QuadraticTrinomial - y=ax^2+bx+c', bg='#1FA7E1', fg='white')
-	label10 = Label(fourthFrame, text = 'Factorial function - y=!x', bg='#1FA7E1', fg='white')
-	label11 = Label(fourthFrame, text = '|Linear| function - y=k*|x-a|+b', bg='#1FA7E1', fg='white')
+	if lang == 'eng':
+		label2 = Label(fourthFrame, text = 'Linear function - y=k*(x-a)+b', bg=bg, fg=fg)
+		label3 = Label(fourthFrame, text = 'Quadratic function - y=k*(x-a)^2+b', bg=bg, fg=fg)
+		label4 = Label(fourthFrame, text = 'Square function - y=k*sqrt(x-a)+b', bg=bg, fg=fg)
+		label5 = Label(fourthFrame, text = 'Cubic function - y=k*(x-a)^3+b', bg=bg, fg=fg)
+		label6 = Label(fourthFrame, text = 'Hyperbola function - y=k/(x-a)+b', bg=bg, fg=fg)
+		label7 = Label(fourthFrame, text = 'Sine function - y=k*sin(x-a)+b', bg=bg, fg=fg)
+		label8 = Label(fourthFrame, text = 'Cosine function - y=k*cos(x-a)+b', bg=bg, fg=fg)
+		label9 = Label(fourthFrame, text = 'QuadraticTrinomial - y=ax^2+bx+c', bg=bg, fg=fg)
+		label10 = Label(fourthFrame, text = 'Factorial function - y=!x', bg=bg, fg=fg)
+		label11 = Label(fourthFrame, text = '|Linear| function - y=k*|x-a|+b', bg=bg, fg=fg)
+	else:
+		label2 = Label(fourthFrame, text = 'Линейная функция - y=k*(x-a)+b', bg=bg, fg=fg)
+		label3 = Label(fourthFrame, text = 'Квадратичния функция - y=k*(x-a)^2+b', bg=bg, fg=fg)
+		label4 = Label(fourthFrame, text = 'Кубическая функция - y=k*sqrt(x-a)+b', bg=bg, fg=fg)
+		label5 = Label(fourthFrame, text = 'Обратная пропорциональность - y=k*(x-a)^3+b', bg=bg, fg=fg)
+		label6 = Label(fourthFrame, text = 'Корневая функция - y=k/(x-a)+b', bg=bg, fg=fg)
+		label7 = Label(fourthFrame, text = 'Функция синуса - y=k*sin(x-a)+b', bg=bg, fg=fg)
+		label8 = Label(fourthFrame, text = 'Функция косинуса - y=k*cos(x-a)+b', bg=bg, fg=fg)
+		label9 = Label(fourthFrame, text = 'Квадратный трёхчлен - y=ax^2+bx+c', bg=bg, fg=fg)
+		label10 = Label(fourthFrame, text = 'Функция факториал - y=!x', bg=bg, fg=fg)
+		label11 = Label(fourthFrame, text = '|Линейная| функция - y=k*|x-a|+b', bg=bg, fg=fg)
 
 	#<--Configs
 	label2.config(font = ('Arial', 15, 'bold'))

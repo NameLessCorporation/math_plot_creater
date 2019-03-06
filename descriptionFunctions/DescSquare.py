@@ -8,6 +8,10 @@ from ezprint import *
 from tkinter import *
 
 
+bg = '#10355B'
+fg = '#DDDFD2'
+
+
 def main_frame(k, a, b, x_list, y_list, lang, func_name):
 	global thirdFrame
 
@@ -74,7 +78,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 
 
 	label = Label(thirdFrame, text = infoString)
-	label.config(font = ('Arial', 15, 'bold'), bg='#1FA7E1', fg='white')
+	label.config(font = ('Arial', 15, 'bold'), bg=bg, fg=fg)
 	label.pack()
 
 

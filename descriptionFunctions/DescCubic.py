@@ -13,6 +13,10 @@ from tkinter import *
 from functions.cubic import *
 
 
+bg = '#10355B'
+fg = '#DDDFD2'
+
+
 def main_frame(k, a, b, x_list, y_list, lang, func_name):
 	global thirdFrame
 
@@ -51,7 +55,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 
 	if lang == 'eng':
 		infoString = 'Your args:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
-		infoString +=  '\nNULL FUNC: \nx0: ' + str(x0) + '\n'
+		# infoString +=  '\nNULL FUNC: \nx0: ' + str(x0) + '\n'
 
 		infoString += 'PROPERTIES:\n'
 
@@ -74,7 +78,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 		infoString += '   Max value of x: not exist' + '\n   Max value of y: not exist'
 	else:
 		infoString = 'Ваши аргументы::\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
-		infoString +=  '\nНоль функции: \nx0: ' + str(x0) + '\n'
+		# infoString +=  '\nНоль функции: \nx0: ' + str(x0) + '\n'
 		infoString += 'СВОЙСТВА:\n'
 
 		infoString += '1) D(f)=R or (-∞; +∞)\n'
@@ -97,7 +101,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 
 
 	label = Label(thirdFrame, text = infoString)
-	label.config(font = ('Arial', 15, 'bold'), bg='#1FA7E1', fg='white')
+	label.config(font = ('Arial', 15, 'bold'), bg=bg, fg=fg)
 	label.pack()
 
 	#<--Start

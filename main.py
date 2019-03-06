@@ -153,68 +153,69 @@ def input_arg(v, lang):
 
 	secondFrame.config(bg = bg)
 	secondFrame.iconbitmap('docs/favicon.ico')
+	widthLabel = 15
 	
 	#<--Elements
 	if lang == 'eng':
 		if v.get() == 8:
 			label1 = Label(secondFrame, text = 'Input a:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 
 			label2 = Label(secondFrame, text = 'Input b:', bg=bg, fg=fg)
 
-			a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = widthLabel)
 
 			label3 = Label(secondFrame, text = 'Input c:', bg=bg, fg=fg)
 
-			b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = widthLabel)
 		elif v.get() == 9:
 			label1 = Label(secondFrame, text = 'Input x:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 		else:
 			label1 = Label(secondFrame, text = 'Input k:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 
 			label2 = Label(secondFrame, text = 'Input a:', bg=bg, fg=fg)
 
-			a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = widthLabel)
 
 			label3 = Label(secondFrame, text = 'Input b:', bg=bg, fg=fg)
 
-			b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = widthLabel)
 
 		button = Button(secondFrame, text = 'DRAW', command = creat_plot)
 	else:
 		if v.get() == 8:
 			label1 = Label(secondFrame, text = 'Введите a:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 
 			label2 = Label(secondFrame, text = 'Введите b:', bg=bg, fg=fg)
 
-			a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = widthLabel)
 
 			label3 = Label(secondFrame, text = 'Введите c:', bg=bg, fg=fg)
 
-			b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = widthLabel)
 		elif v.get() == 9:
 			label1 = Label(secondFrame, text = 'Введите x:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 		else:
 			label1 = Label(secondFrame, text = 'Введите k:', bg=bg, fg=fg)
 
-			k = Entry(secondFrame, width = 20)
+			k = Entry(secondFrame, width = widthLabel)
 
 			label2 = Label(secondFrame, text = 'Введите a:', bg=bg, fg=fg)
 
-			a = Entry(secondFrame, width = 20)
+			a = Entry(secondFrame, width = widthLabel)
 
 			label3 = Label(secondFrame, text = 'Введите b:', bg=bg, fg=fg)
 
-			b = Entry(secondFrame, width = 20)
+			b = Entry(secondFrame, width = widthLabel)
 
 		button = Button(secondFrame, text = 'НАЧЕРТИТЬ', command = creat_plot)
 
@@ -240,7 +241,7 @@ def input_arg(v, lang):
 
 		b.config(font = ('Arial', 15, 'bold'))
 
-	button.config(font = ('Arial', 15, 'bold'))
+	button.config(font = ('Arial', 12, 'bold'))
 
 	#<--Grids
 	label1.grid(column = 0, row = 1)
@@ -255,7 +256,7 @@ def input_arg(v, lang):
 
 		b.grid(column = 0, row = 6)
 
-	button.grid(column = 0, columnspan = 7)
+	button.grid(column = 0, columnspan = 7, pady = 5)
 
 	#<--Start
 	secondFrame.mainloop()

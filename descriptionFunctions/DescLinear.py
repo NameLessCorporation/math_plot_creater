@@ -48,6 +48,8 @@ def desc(k, a, b, lang, func_name):
 
 
 	x0 = round(-b/k, 3)
+	if x0 == 0:
+		x0 = 0
 
 	if lang == 'eng':
 		infoString += 'Your args:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
@@ -73,7 +75,7 @@ def desc(k, a, b, lang, func_name):
 		
 	else:
 		infoString += 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
-		infoString += 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
+		# infoString += 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
 		infoString += 'D(f)=R or (-∞; +∞)\n'
 		infoString += 'E(f)=R or (-∞; +∞)\n'
 		infoString += 'Нуль функции: ' + str(x0) + '\n'

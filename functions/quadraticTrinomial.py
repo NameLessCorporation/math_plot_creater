@@ -96,6 +96,10 @@ def f(a, b, c):
 	#search tops
 	xo = -b / (2 * a)
 	yo = round(-((b**2 - 4 * a * c) / 4 * a), 3)
+	if xo == 0:
+		xo = 0
+	if yo == 0:
+		yo = 0
 	#search Disc.
 	D = b**2 - 4 * a * c
 	if D > 0:

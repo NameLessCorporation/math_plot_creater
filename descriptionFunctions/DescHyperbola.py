@@ -47,7 +47,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 			infoString += 'The function on each of the intervals (-∞; ' + str(a) + ')U(' + str(a) + '; +∞) is increasing.\n'
 			# infoString += 'The function takes negative values on the interval and takes positive values on the interval'
 
-		infoString += 'The function does not have the smallest and largest values.\n'
+		infoString += 'The function does not have the smallest and largest values.'
 	else:
 		infoString = 'Ваши аргументы:\nk= ' + str(k) + '\na= ' + str(a) + '\nb= ' + str(b) + '\n'
 		infoString += 'СВОЙСТВА:\n'
@@ -68,7 +68,7 @@ def main_frame(k, a, b, x_list, y_list, lang, func_name):
 			infoString += 'Функция на каждом из промежутков (-∞; ' + str(a) + ')U(' + str(a) + '; +∞) является возрастающей.\n'
 			# infoString += 'The function takes negative values on the interval and takes positive values on the interval'
 
-		infoString += 'Функция не имеет наименьших и наибольших значений.\n'
+		infoString += 'Функция не имеет наименьших и наибольших значений.'
 
 
 	label = Label(thirdFrame, text = infoString)
